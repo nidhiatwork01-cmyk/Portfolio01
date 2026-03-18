@@ -154,10 +154,22 @@
     </style>
   </head>
   <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar"></div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+      <button class="fab-btn fab-top" id="backToTop" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+      <button class="fab-btn fab-contact" id="quickContact" title="Quick Contact">
+        <i class="fas fa-envelope"></i>
+      </button>
+    </div>
+
     <nav class="navbar" id="navbar">
       <div class="container">
         <div class="nav-wrapper">
-          <div class="logo">NS</div>
           <ul class="nav-menu" id="navMenu">
             <li><a href="#home" class="nav-link">Home</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
@@ -185,20 +197,52 @@
       </div>
       <div class="container">
         <div class="hero-content">
+          <div class="hero-visual-side">
+            <div class="hero-image-wrapper">
+              <div class="geometric-shape shape-1"></div>
+              <div class="geometric-shape shape-2"></div>
+              <div class="geometric-shape shape-3"></div>
+              <div class="geometric-shape shape-4"></div>
+              <div class="geometric-shape shape-5"></div>
+              
+              <div class="image-container">
+                <div class="image-frame">
+                  <img src="hackathon-image.jpeg" alt="Nidhi Singh" class="hero-image" />
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <div class="hero-text">
-            <div class="hero-greeting">Hello, I'm</div>
+            <div class="hero-greeting">Hello, I'm Nidhi</div>
             <h1 class="hero-name">
-              <span class="gradient-text">Nidhi Singh</span>
+              <span class="gradient-text typed-text">UI/UX Designer</span><br>
+              <span class="smart-title">&amp; Design Architect</span>
             </h1>
-            <h2 class="hero-title">Frontend Developer</h2>
             <p class="hero-description">
-              Building beautiful, responsive, and interactive web experiences
-              with modern technologies. Currently learning Node.js to transition
-              into full-stack development.
+              Crafting pixel-perfect, responsive web experiences with React, TypeScript &amp; modern design thinking. 
+              I build interfaces that don't just look beautiful—they work seamlessly.
             </p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-count="15">0</div>
+                <div class="stat-label">Projects</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="8">0</div>
+                <div class="stat-label">Technologies</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="1">0</div>
+                <div class="stat-label">Hackathon Win</div>
+              </div>
+            </div>
             <div class="hero-buttons">
-              <a href="#contact" class="btn btn-primary">Get In Touch</a>
-              <a href="#projects" class="btn btn-secondary">View Projects</a>
+              <a href="#contact" class="btn btn-primary btn-hire">
+                <span>HIRE ME</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#projects" class="btn btn-secondary">View My Work</a>
             </div>
             <div class="hero-social">
               <a
@@ -218,17 +262,6 @@
               <a href="mailto:nidhisingh.kp.23@gmail.com" class="social-icon" aria-label="Email">
                 <i class="fas fa-envelope"></i>
               </a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="floating-card card-1">
-              <i class="fab fa-react"></i>
-            </div>
-            <div class="floating-card card-2">
-              <i class="fab fa-vuejs"></i>
-            </div>
-            <div class="floating-card card-3">
-              <i class="fab fa-js"></i>
             </div>
           </div>
         </div>
@@ -305,12 +338,13 @@
           <div class="skill-category">
             <div class="skill-header">
               <i class="fas fa-code"></i>
-              <h3>Programming Languages</h3>
+              <h3>Languages</h3>
             </div>
             <div class="skill-tags">
-              <span class="skill-tag">C</span>
+              <span class="skill-tag">C/C++</span>
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
               <span class="skill-tag">Python</span>
-              <span class="skill-tag">C++</span>
               <span class="skill-tag">SQL</span>
               <span class="skill-tag">JavaScript</span>
               <span class="skill-tag">TypeScript</span>
@@ -318,48 +352,59 @@
           </div>
           <div class="skill-category">
             <div class="skill-header">
-              <i class="fas fa-paint-brush"></i>
-              <h3>Frontend Development</h3>
+              <i class="fas fa-globe"></i>
+              <h3>Web Development</h3>
             </div>
             <div class="skill-tags">
-              <span class="skill-tag">HTML</span>
-              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">ReactJS</span>
+              <span class="skill-tag">Next.js</span>
               <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">JavaScript (ES6+)</span>
-              <span class="skill-tag">React.js</span>
-              <span class="skill-tag">Redux</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">Vue.js</span>
-              <span class="skill-tag">REST API</span>
-              <span class="skill-tag">Responsive UI</span>
+              <span class="skill-tag">shadcn/ui</span>
+              <span class="skill-tag">Framer Motion</span>
+              <span class="skill-tag">RESTful API</span>
+              <span class="skill-tag">Backend Architecture</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-header">
+              <i class="fas fa-cubes"></i>
+              <h3>Software Engineering</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">SOLID Principles</span>
+              <span class="skill-tag">Design Patterns</span>
+              <span class="skill-tag">Factory Pattern</span>
+              <span class="skill-tag">Observer Pattern</span>
+              <span class="skill-tag">Singleton Pattern</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-header">
+              <i class="fas fa-check-circle"></i>
+              <h3>Quality Assurance</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Unit Testing</span>
+              <span class="skill-tag">Jest</span>
+              <span class="skill-tag">Vitest</span>
+              <span class="skill-tag">Integration Testing</span>
+              <span class="skill-tag">Debugging</span>
+              <span class="skill-tag">Code Review</span>
             </div>
           </div>
           <div class="skill-category">
             <div class="skill-header">
               <i class="fas fa-tools"></i>
-              <h3>Libraries &amp; Tools</h3>
+              <h3>Tools &amp; Methodologies</h3>
             </div>
             <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">Axios</span>
-              <span class="skill-tag">React Router</span>
-              <span class="skill-tag">Vue Router</span>
-              <span class="skill-tag">Pinia</span>
-              <span class="skill-tag">Postman</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <div class="skill-header">
-              <i class="fas fa-chart-line"></i>
-              <h3>Analytical &amp; Business</h3>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Data Analysis</span>
-              <span class="skill-tag">Process Documentation</span>
-              <span class="skill-tag">Reporting &amp; Dashboarding</span>
-              <span class="skill-tag">Business Process Modeling</span>
-              <span class="skill-tag">Product Management</span>
+              <span class="skill-tag">Visual Studio</span>
+              <span class="skill-tag">Agile/Scrum</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Vercel</span>
+              <span class="skill-tag">Netlify</span>
             </div>
           </div>
           <div class="skill-category">
@@ -368,12 +413,10 @@
               <h3>Soft Skills</h3>
             </div>
             <div class="skill-tags">
-              <span class="skill-tag">Public Speaking</span>
               <span class="skill-tag">Client Communication</span>
-              <span class="skill-tag">Stakeholder Engagement</span>
-              <span class="skill-tag">Event Hosting &amp; Script Writing</span>
-              <span class="skill-tag">Cross-functional Collaboration</span>
               <span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Public Speaking</span>
+              <span class="skill-tag">Cross-functional Collaboration</span>
             </div>
           </div>
         </div>
@@ -405,7 +448,7 @@
               <div class="achievement-details">
                 <div class="detail-item">
                   <i class="fas fa-calendar"></i>
-                  <span>December 14, 2023</span>
+                  <span>Dec 2025</span>
                 </div>
                 <div class="detail-item">
                   <i class="fas fa-building"></i>
@@ -415,6 +458,22 @@
                   <i class="fas fa-users"></i>
                   <span>Team: TEAM_DEDSEC</span>
                 </div>
+              </div>
+              <div class="project-card-footer achievement-project-links">
+                <a
+                  href="https://github.com/nidhiatwork01-cmyk/HACK-BOT"
+                  class="project-link-small"
+                >
+                  <i class="fab fa-github"></i>
+                  Campus Event Navigator (GitHub)
+                </a>
+                <a
+                  href="https://www.loom.com/share/71f3cefe62d34a9b9b3b33b01b8cc35c"
+                  class="project-link-small"
+                >
+                  <i class="fas fa-play-circle"></i>
+                  Demo
+                </a>
               </div>
             </div>
           </div>
@@ -497,138 +556,6 @@
     </section>
     <!-- ===================================================== -->
 
-    <section id="experience" class="experience">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Experience</span>
-          <h2 class="section-title">Freelance Work</h2>
-        </div>
-        <div class="experience-content">
-          <div class="experience-card">
-            <div class="experience-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <div class="experience-info">
-              <h3>Freelance Frontend Developer</h3>
-              <p class="experience-company">Born Genius</p>
-              <p class="experience-description">
-                Managed end-to-end client engagement — gathered requirements,
-                coordinated iterative feedback cycles, and delivered a
-                production-ready product on schedule. Converted high-fidelity
-                Figma designs into pixel-perfect React UI using TypeScript and
-                Tailwind CSS. Developed scalable, reusable components with clean
-                code structure following modern best practices. Received strong
-                client appreciation for accuracy, performance, and professional
-                communication throughout.
-              </p>
-              <div class="experience-details">
-                <span class="experience-year">2025</span>
-                <a
-                  href="https://growmymind.netlify.app/"
-                  class="experience-link"
-                >
-                  <i class="fas fa-external-link-alt"></i>
-                  Live Website
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="hackathon-project" class="hackathon-project">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Project</span>
-          <h2 class="section-title">Campus Event Navigator</h2>
-        </div>
-        <div class="project-showcase">
-          <div class="project-content">
-            <div class="project-description">
-              <h3>The Problem</h3>
-              <p>
-                Students frequently miss important events like seminars,
-                workshops, hackathons, and guest lectures simply because they
-                didn't know about them. Multiple societies send announcements on
-                multiple platforms, leading to confusion and missed
-                opportunities.
-              </p>
-              <h3>The Solution</h3>
-              <p>
-                We created a unified portal to bring clarity and ensure no
-                student misses out on important campus events. The platform
-                provides a centralized location for all event announcements,
-                making it easy for students to discover and register for events
-                that matter to them.
-              </p>
-              <div class="project-features">
-                <div class="feature-item">
-                  <i class="fas fa-search"></i>
-                  <div>
-                    <h4>AI-Powered Search</h4>
-                    <p>Semantic search for finding events intelligently</p>
-                  </div>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-calendar-alt"></i>
-                  <div>
-                    <h4>Calendar View</h4>
-                    <p>Interactive calendar with event highlighting</p>
-                  </div>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-brain"></i>
-                  <div>
-                    <h4>ML Features</h4>
-                    <p>
-                      Success prediction, recommendations, and trending analysis
-                    </p>
-                  </div>
-                </div>
-                <div class="feature-item">
-                  <i class="fas fa-user-check"></i>
-                  <div>
-                    <h4>User Management</h4>
-                    <p>
-                      Authentication, profiles, and event registration tracking
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="project-tech">
-                <h4>Tech Stack</h4>
-                <div class="tech-stack">
-                  <span class="tech-tag">React</span>
-                  <span class="tech-tag">Flask</span>
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">ML/AI</span>
-                  <span class="tech-tag">Tailwind CSS</span>
-                  <span class="tech-tag">SQLite</span>
-                </div>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://github.com/nidhiatwork01-cmyk/HACK-BOT"
-                  class="project-link btn-primary"
-                >
-                  <i class="fab fa-github"></i>
-                  View on GitHub
-                </a>
-                <a
-                  href="https://www.loom.com/share/71f3cefe62d34a9b9b3b33b01b8cc35c"
-                  class="project-link btn-secondary"
-                >
-                  <i class="fas fa-play-circle"></i>
-                  Watch Demo
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="projects" class="projects">
       <div class="container">
         <div class="section-header">
@@ -654,11 +581,11 @@
             </p>
             <div class="project-card-footer">
               <a
-                href="https://vimeo.com/1164712351?share=copy&fl=sv&fe=ci"
+                href="https://thriftapp-eta.vercel.app/"
                 class="project-link-small"
               >
                 <i class="fas fa-external-link-alt"></i>
-                Demo
+                Live Demo
               </a>
               <a
                 href="https://github.com/nidhiatwork01-cmyk/thriftapp"
@@ -673,29 +600,187 @@
           <div class="project-card">
             <div class="project-card-header">
               <div class="project-icon">
-                <i class="fas fa-venus"></i>
+                <i class="fas fa-robot"></i>
               </div>
               <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">Responsive UI</span>
+                <span class="project-tag">Full-Stack</span>
+                <span class="project-tag">AI</span>
+                <span class="project-tag">VC Intelligence</span>
               </div>
             </div>
-            <h3>Feminism Awareness Website</h3>
+            <h3>Meridian AI Scout — VC Intelligence Interface</h3>
             <p>
-              Crafted a React-based site that highlights key themes, stories,
-              and calls to action around feminism with an accessible and clean
-              presentation. Implemented dynamic, animated KPI dashboards.
+              Full-stack VC scouting app with search, filters, paginated table,
+              company profiles, and command palette (Cmd+K). Implemented secure
+              server-side AI enrichment through a Vercel serverless function using
+              Groq (Llama 3), keeping API keys out of the browser.
             </p>
             <div class="project-card-footer">
               <a
-                href="https://chipper-ganache-ba6b3d.netlify.app/"
+                href="https://meridian-ai-scout.vercel.app/companies"
                 class="project-link-small"
               >
                 <i class="fas fa-external-link-alt"></i>
                 Live Demo
               </a>
+              <a
+                href="https://github.com/nidhiatwork01-cmyk/meridian-ai-scout"
+                class="project-link-small"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
             </div>
           </div>
+
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">Full-Stack</span>
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">AI</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Prisma</span>
+                <span class="project-tag">Tailwind CSS</span>
+              </div>
+            </div>
+            <h3>Second Brain — Knowledge Management System</h3>
+            <p>
+              Built a production-style knowledge management platform with
+              capture, enrichment, and query workflows. Implemented semantic
+              search, smart tagging, and AI-generated summaries backed by
+              Next.js APIs, Prisma, and PostgreSQL.
+            </p>
+            <div class="project-card-footer">
+              <a
+                href="https://gamma-wheat-eight.vercel.app/"
+                class="project-link-small"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/nidhiatwork01-cmyk/gamma"
+                class="project-link-small"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">
+                <i class="fas fa-cash-register"></i>
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">Full-Stack</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">Dashboard</span>
+              </div>
+            </div>
+            <h3>Retail POS Web UI/UX — Full-Stack System</h3>
+            <p>
+              Built a fully functional Point of Sale system with React,
+              real-time data handling, and a professional dashboard.
+              Designed a complete retail management experience including
+              inventory management and sales tracking.
+            </p>
+            <div class="project-card-footer">
+              <a
+                href="https://effortless-sorbet-fed880.netlify.app/"
+                class="project-link-small"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/nidhiatwork01-cmyk/WeAnalyze2"
+                class="project-link-small"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">UI/UX</span>
+                <span class="project-tag">Responsive</span>
+                <span class="project-tag">Fintech</span>
+              </div>
+            </div>
+            <h3>Fintech Mobile App Design — UI/UX Clone</h3>
+            <p>
+              Designed a modern fintech interface with responsive UI components,
+              a financial dashboard, and clean navigation focused on usability
+              and visual consistency.
+            </p>
+            <div class="project-card-footer">
+              <a
+                href="https://velvety-palmier-c1ee78.netlify.app/"
+                class="project-link-small"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/nidhiatwork01-cmyk/WeAnalyze1"
+                class="project-link-small"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-card-header">
+              <div class="project-icon">
+                <i class="fas fa-pencil-ruler"></i>
+              </div>
+              <div class="project-tags">
+                <span class="project-tag">Next.js</span>
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">Tailwind CSS</span>
+                <span class="project-tag">Figma to Code</span>
+              </div>
+            </div>
+            <h3>Dr. Maya Reynolds Therapy Website</h3>
+            <p>
+              Recreated and coded a modern therapy website from a Figma-based
+              template to strengthen pixel-perfect cloning skills. Built with a
+              responsive, mobile-first layout, semantic structure, smooth
+              section transitions, and strong visual hierarchy.
+            </p>
+            <div class="project-card-footer">
+              <a
+                href="https://grow-lyart.vercel.app/"
+                class="project-link-small"
+              >
+                <i class="fas fa-external-link-alt"></i>
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/nidhiatwork01-cmyk/Grow"
+                class="project-link-small"
+              >
+                <i class="fab fa-github"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+
           <div class="project-card">
             <div class="project-card-header">
               <div class="project-icon">
@@ -784,7 +869,7 @@
               <p class="education-institution">
                 Kalinga Institute of Industrial Technology (KIIT)
               </p>
-              <p class="education-location">Bhubaneshwar, Odisha</p>
+              <p class="education-location">Bhubaneswar, Odisha</p>
               <div class="education-details">
                 <span class="education-year">2023 - 2027</span>
                 <span class="education-cgpa">CGPA: 9.2</span>
@@ -821,6 +906,7 @@
                 <div class="contact-icon">
                   <i class="fas fa-phone"></i>
                 </div>
+
                 <div>
                   <h4>Phone</h4>
                   <p>+91 8101414224</p>

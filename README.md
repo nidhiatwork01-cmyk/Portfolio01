@@ -57,8 +57,6 @@ No build step is required.
 - Dr. Maya Reynolds Therapy Website
   - Live: https://grow-lyart.vercel.app/
   - GitHub: https://github.com/nidhiatwork01-cmyk/Grow
-- Mongolia Motorbike Tours
-  - GitHub: https://github.com/nidhiatwork01-cmyk/mongolia-motorbike-tour
 
 ## Deployment
 

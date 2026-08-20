@@ -120,6 +120,53 @@
     });
   });
 
+  /* ── PROJECT FILTERING LOGIC ── */
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const projCards = document.querySelectorAll('.proj-card');
+
+  if (tabBtns.length && projCards.length) {
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden-card');
+            // Re-trigger intersection observer logic/reveal class if needed
+            card.classList.add('visible');
+          } else {
+            card.classList.add('hidden-card');
+          }
+        });
+      });
+    });
+  }
+
+  /* ── EMAIL COPY TO CLIPBOARD ── */
+  const copyBtn = document.getElementById('copy-email-btn');
+  const tooltip = document.getElementById('copy-tooltip');
+
+  if (copyBtn && tooltip) {
+    copyBtn.addEventListener('click', () => {
+      const email = 'nidhiatwork.01@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        tooltip.textContent = 'Copied!';
+        tooltip.classList.add('copied');
+        
+        setTimeout(() => {
+          tooltip.textContent = 'Click to Copy';
+          tooltip.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    });
+  }
+
   /* ── CUSTOM CURSOR LOGIC ── */
   const cursor = document.querySelector('.cursor');
   if (cursor) {
@@ -134,3 +181,4 @@
   }
 
 })();
+

@@ -7,7 +7,8 @@
   <title>Nidhi Singh — Frontend Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -54,10 +55,13 @@
       <div class="panel-overlay"></div>
       <div class="panel-vignette"></div>
       <div class="panel-content">
-        <div class="loc-tag"><span class="loc-dot"></span><span>React · TypeScript&ensp;|&ensp;Production Systems</span></div>
+        <div class="loc-tag"><span class="loc-dot" style="background: var(--cyan); box-shadow: 0 0 8px var(--cyan);"></span><span>Builder & Engineer&ensp;|&ensp;KIIT Bhubaneswar</span></div>
         <h1 class="panel-title">I Build<br>What Ships</h1>
-        <p class="panel-sub">POS systems, enterprise frontends, AI-powered interfaces — Figma to production, end to end.</p>
-        <a href="#projects" class="btn btn--solid">View My Work</a>
+        <p class="panel-sub">Builder & Software Engineer turning complex systems into high-performance software.</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn--solid"><i class="fa-solid fa-code"></i> View Projects</a>
+          <a href="resume.pdf" download class="btn btn--ghost"><i class="fa-solid fa-file-pdf"></i> Resume (PDF)</a>
+        </div>
       </div>
     </section>
 
@@ -70,15 +74,42 @@
       <div class="panel-overlay"></div>
       <div class="panel-vignette"></div>
       <div class="panel-content">
-        <div class="loc-tag"><span class="loc-dot"></span><span>Hackathons · AI/ML&ensp;|&ensp;1st Place Winner</span></div>
+        <div class="loc-tag"><span class="loc-dot" style="background: var(--indigo); box-shadow: 0 0 8px var(--indigo);"></span><span>Hackathons & AI/ML&ensp;|&ensp;1st Place Winner</span></div>
         <h1 class="panel-title">Beyond<br>The Code</h1>
-        <p class="panel-sub">1st at Hack-A-Bot 2.0 among 1000+ devs. NeuroHack finalist at IIT Guwahati.</p>
-        <a href="#contact" class="btn btn--ghost">Get In Touch</a>
+        <p class="panel-sub">Winning hackathons, building low-level systems, and scaling financial reconciliation pipelines.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn--solid btn--emerald"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
+        </div>
       </div>
     </section>
 
+    <!-- Live Stats Counter Banner -->
+    <div class="stats-banner">
+      <div class="stats-banner-track">
+        <div class="stats-banner-item">
+          <span class="stats-icon"><i class="fa-solid fa-laptop-code"></i></span>
+          <span class="stats-text"><strong class="stats-highlight">10+</strong> Production Projects Shipped Solo</span>
+        </div>
+        <div class="stats-banner-sep">|</div>
+        <div class="stats-banner-item">
+          <span class="stats-icon"><i class="fa-solid fa-trophy"></i></span>
+          <span class="stats-text"><strong class="stats-highlight">1st Place</strong> out of 1,000+ Hackathon Competitors</span>
+        </div>
+        <div class="stats-banner-sep">|</div>
+        <div class="stats-banner-item">
+          <span class="stats-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+          <span class="stats-text"><strong class="stats-highlight">9.01 / 10.0</strong> CGPA</span>
+        </div>
+        <div class="stats-banner-sep">|</div>
+        <div class="stats-banner-item">
+          <span class="stats-icon"><i class="fa-solid fa-briefcase"></i></span>
+          <span class="stats-text"><strong class="stats-highlight">8 LPA</strong> PPO in Hand</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Badge -->
-    <div class="name-badge"><span class="nb-name">Nidhi Singh</span><span class="nb-div"></span><span class="nb-role">Frontend Engineer</span></div>
+    <div class="name-badge"><span class="nb-name">Nidhi Singh</span><span class="nb-div" style="background: var(--indigo);"></span><span class="nb-role">Software Engineer</span></div>
     <div class="scroll-indicator"><div class="scroll-line"></div><span>Scroll</span></div>
   </section>
 
@@ -94,17 +125,17 @@
             <div class="about-img-border"></div>
           </div>
           <div class="stat-row">
-            <div class="stat"><span class="stat-num" data-count="15">0</span><span class="stat-plus">+</span><span class="stat-label">Projects</span></div>
-            <div class="stat"><span class="stat-num" data-count="2">0</span><span class="stat-label">Internships</span></div>
-            <div class="stat"><span class="stat-num" data-count="9">0</span><span class="stat-plus">.09</span><span class="stat-label">CGPA</span></div>
+            <div class="stat"><span class="stat-num" data-count="10">0</span><span class="stat-plus">+</span><span class="stat-label">Solo Builds</span></div>
+            <div class="stat"><span class="stat-num" data-count="4">0</span><span class="stat-label">Internships</span></div>
+            <div class="stat"><span class="stat-num" data-count="9">0</span><span class="stat-plus">.01</span><span class="stat-label">CGPA</span></div>
           </div>
         </div>
         <div class="about-text reveal" style="--d:0.15s">
-          <h2>React & TypeScript developer with a bias for <span class="grad">shipping fast.</span></h2>
-          <p>I'm Nidhi Singh — a frontend engineer at KIIT Bhubaneswar with production experience building scalable web applications. From POS systems and enterprise-grade frontends to AI-powered interfaces, I work across the full stack of modern web development.</p>
-          <p>Proficient in JavaScript (ES6+), Figma-to-production implementation, REST API integration, JWT auth, Jest testing, AI/LLM integration, and Git-based Agile workflows.</p>
+          <h2>Builder & Software Engineer with a bias for <span class="grad">engineering excellence.</span></h2>
+          <p>I'm Nidhi Singh — a software engineer at KIIT Bhubaneswar with extensive production experience. I specialize in building highly resilient client-facing products, C++ process monitors, and scaling automated financial reconciliation systems.</p>
+          <p>Experienced across the full spectrum: React 18/19, TypeScript, Next.js, Low-Level C++17 Linux/POSIX environments, SQL ledger reconciliation pipelines, and Agile team operations.</p>
           <div class="pills">
-            <span>React.js</span><span>TypeScript</span><span>Next.js</span><span>Redux</span><span>Tailwind CSS</span><span>REST APIs</span><span>JWT Auth</span><span>Jest</span><span>AI/LLM</span>
+            <span>React 18/19</span><span>TypeScript</span><span>C++17</span><span>SQL</span><span>Next.js 15</span><span>Redux Toolkit</span><span>RESTful APIs</span><span>Jest / Vitest</span><span>Linux/POSIX</span><span>Git/GitHub</span>
           </div>
         </div>
       </div>
@@ -116,15 +147,129 @@
     <div class="container">
       <div class="sec-label reveal"><span class="sec-dot"></span>Experience</div>
       <h2 class="section-title reveal">Where I've <span class="grad">Contributed.</span></h2>
-      <div class="exp-card reveal">
-        <div class="exp-header"><div><h3>Project Management Intern</h3><p class="exp-co">MagicTeal · Remote</p></div><span class="exp-date">Present</span></div>
-        <ul><li>Translated Figma designs into pixel-accurate React/TypeScript interfaces for worldwide enterprise clients; owned full design-to-code delivery across 10+ simultaneous projects.</li><li>Integrated RESTful APIs with fully typed response contracts using TypeScript generics and utility types; implemented lazy loading, dynamic imports, and image optimization.</li><li>Owned client onboarding and communication; primary point of contact throughout the full client lifecycle.</li></ul>
-        <div class="exp-tags"><span>React</span><span>TypeScript</span><span>Figma</span><span>REST APIs</span></div>
-      </div>
-      <div class="exp-card reveal" style="--d:0.15s">
-        <div class="exp-header"><div><h3>Frontend Engineer Intern</h3><p class="exp-co">Sellar · Remote</p></div><span class="exp-date">2025</span></div>
-        <ul><li>Full-time build and test ownership of a production React/TypeScript POS and billing application — end-to-end feature delivery from scoping to deployment.</li><li>Built reusable, scalable UI components using React.js and Redux; wrote Jest unit and integration tests across feature releases.</li><li>Integrated RESTful APIs and JSON payloads to power real-time data flows across POS transactions, invoicing, and inventory.</li></ul>
-        <div class="exp-tags"><span>React</span><span>Redux</span><span>Jest</span><span>POS Systems</span><span>Agile</span></div>
+      
+      <div class="timeline">
+        <!-- HighRadius -->
+        <div class="timeline-item reveal">
+          <div class="timeline-badge active-badge"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="role-info">
+                <h3>Forward Deployed Engineer Intern</h3>
+                <span class="company"><i class="fa-solid fa-building"></i> HighRadius &middot; Hyderabad, India (Hybrid)</span>
+              </div>
+              <div class="meta-info">
+                <span class="timeline-date">July 2026 – Present</span>
+                <span class="status-badge status-badge--success">Offer Secured</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary">Undergoing intensive training and execution on enterprise IT systems, SAP ERP interfaces, and Order-to-Cash (O2C) automation.</p>
+              <ul>
+                <li>Executing high-volume financial dataset modeling, data verification, and ledger reconciliation workflows.</li>
+                <li>Supporting system-level integration between client databases and the HighRadius cloud platform.</li>
+                <li>Documenting project workflows, tracking issue resolutions against strict SLAs, and establishing standard operating procedures (SOPs).</li>
+              </ul>
+              <div class="timeline-accent-box">
+                <span class="accent-title"><i class="fa-solid fa-award"></i> Key Outcome:</span>
+                <span class="accent-val">Awarded Full-Time Pre-Placement Offer (PPO) of <strong>8 LPA</strong> based on exceptional performance.</span>
+              </div>
+              <div class="exp-tags">
+                <span>SQL</span><span>SAP ERP</span><span>Advanced Excel</span><span>Python</span><span>SLA Tracking</span><span>Dataset Modeling</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatBytes -->
+        <div class="timeline-item reveal" style="--d:0.1s">
+          <div class="timeline-badge"><i class="fa-solid fa-code"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="role-info">
+                <h3>Solo Frontend Developer Intern</h3>
+                <span class="company"><i class="fa-solid fa-laptop-code"></i> WhatBytes &middot; Remote</span>
+              </div>
+              <div class="meta-info">
+                <span class="timeline-date">April 2026 – July 2026</span>
+                <span class="status-badge status-badge--info">Solo Builds</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary">Served as the solo Frontend Developer across 10+ client production projects, handling full architecture, UI/UX design, API integration, Jest testing, and production deployment on Vercel.</p>
+              <ul>
+                <li><strong>Skadoosh</strong>: Built the complete CRM, booking engine, calendar scheduling, and transaction management system for a PlayStation gaming venue in Bangalore from scratch in React 19/TypeScript.</li>
+                <li><strong>Datamatics</strong>: Engineered the fully dynamic, data-driven configuration interface for an AI LinkedIn Scraper Agent.</li>
+                <li>Managed clean, maintainable codebases across 100+ Git branches with structured peer code reviews and unit testing.</li>
+              </ul>
+              <div class="timeline-accent-box">
+                <span class="accent-title"><i class="fa-solid fa-code-branch"></i> Proof Metric:</span>
+                <span class="accent-val">Shipped <strong>10+ Client Apps</strong> and managed <strong>100+ Branches</strong> with Jest unit test coverage.</span>
+              </div>
+              <div class="exp-tags">
+                <span>React 18/19</span><span>TypeScript</span><span>Next.js 15</span><span>Redux Toolkit</span><span>Jest</span><span>Vercel</span><span>Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MagicTeal -->
+        <div class="timeline-item reveal" style="--d:0.2s">
+          <div class="timeline-badge"><i class="fa-solid fa-arrows-spin"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="role-info">
+                <h3>Project Management & Operations Intern</h3>
+                <span class="company"><i class="fa-solid fa-diagram-project"></i> MagicTeal &middot; Remote</span>
+              </div>
+              <div class="meta-info">
+                <span class="timeline-date">March 2026 – May 2026</span>
+                <span class="status-badge status-badge--warning">Process Eng.</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary">Facilitated Agile delivery across 10+ concurrent enterprise client workstreams; owned requirements gathering, task prioritization, risk identification, and project sprint documentation.</p>
+              <ul>
+                <li><strong>Jui Project Case Study</strong>: Diagnosed critical communication bottlenecks between international clients and delivery pods. Designed and implemented a Granular Transparency Matrix and Quality-Velocity Trade-Off Model.</li>
+                <li>Successfully boosted team velocity and streamlined sprint delivery documentation.</li>
+              </ul>
+              <div class="timeline-accent-box">
+                <span class="accent-title"><i class="fa-solid fa-chart-line"></i> Proof Metric & Link:</span>
+                <span class="accent-val">Improved on-time delivery from <strong>50% to 90% in 2 weeks</strong>. <a href="https://docs.google.com/document/d/1NfVjlNRHM7JjKAteIRc0JksoV-69b5LO0qMHsVbuJ-Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="timeline-link">Read Jui Case Study Doc <i class="fa-solid fa-external-link-alt"></i></a></span>
+              </div>
+              <div class="exp-tags">
+                <span>Agile/Scrum</span><span>Granular Matrix</span><span>SOP Development</span><span>Jira</span><span>MS Office</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sellar -->
+        <div class="timeline-item reveal" style="--d:0.3s">
+          <div class="timeline-badge"><i class="fa-solid fa-shop"></i></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="role-info">
+                <h3>Frontend Engineer Intern</h3>
+                <span class="company"><i class="fa-solid fa-store"></i> Sellar &middot; Remote</span>
+              </div>
+              <div class="meta-info">
+                <span class="timeline-date">March 2026 – April 2026</span>
+                <span class="status-badge status-badge--neutral">POS Systems</span>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <p class="timeline-summary">Developed core UI components for commercial point-of-sale (POS) catalog views, cart management, and billing screens.</p>
+              <ul>
+                <li>Integrated backend REST APIs for real-time order processing, checkout validation, and invoice generation.</li>
+                <li>Built responsive merchant UI components in React and Tailwind CSS; wrote Jest unit and integration tests.</li>
+              </ul>
+              <div class="exp-tags">
+                <span>React.js</span><span>Redux</span><span>Tailwind CSS</span><span>REST APIs</span><span>Jest</span><span>Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -134,127 +279,119 @@
     <div class="container">
       <div class="sec-label reveal"><span class="sec-dot"></span>Featured Projects</div>
       <h2 class="section-title reveal">Built to <span class="grad">Scale.</span></h2>
+      <!-- PROJECT TABS -->
+      <div class="proj-tabs reveal">
+        <button class="tab-btn active" data-filter="all">All</button>
+        <button class="tab-btn" data-filter="ai-cloud">AI & Cloud</button>
+        <button class="tab-btn" data-filter="systems-cpp">Systems C++</button>
+        <button class="tab-btn" data-filter="full-stack">Full-Stack</button>
+        <button class="tab-btn" data-filter="case-studies">Case Studies</button>
+      </div>
+
       <div class="proj-grid">
-        <!-- Project 01 -->
-        <div class="proj-card reveal" style="--d:0.1s">
+        <!-- Project 01: AURA Skincare -->
+        <div class="proj-card reveal" data-category="full-stack">
+          <div class="proj-num">01</div>
+          <div class="proj-type">D2C Storefront</div>
+          <h3>AURA Skincare</h3>
+          <p>High-performance D2C e-commerce platform built with React 18 and TypeScript. Implements simulated network resilience with 800ms artificial latency and a 20% failure recovery mechanism validated by Vitest.</p>
+          <div class="proj-stack">
+            <span>React 18</span> <span>TypeScript</span> <span>Vitest</span> <span>Resilience</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://nua-eight-rosy.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/nidhiatwork01-cmyk" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 02: Meridian AI Scout -->
+        <div class="proj-card reveal" data-category="ai-cloud">
           <div class="proj-num">02</div>
-          <div class="proj-type">Marketplace</div>
-          <h3>ThriftApp</h3>
-          <p>A full-stack C2C marketplace for second-hand items. Features secure authentication, real-time listings, and responsive design.</p>
-          <div class="proj-stack">
-            <span>Next.js</span> <span>Supabase</span> <span>Tailwind</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://github.com/nidhiatwork01-cmyk/thriftapp" target="_blank">GitHub ↗</a>
-            <a href="https://thriftapp-eta.vercel.app/" target="_blank">Live ↗</a>
-          </div>
-        </div>
-
-        <!-- Project 03 -->
-        <div class="proj-card reveal" style="--d:0.2s">
-          <div class="proj-num">03</div>
-          <div class="proj-type">AI Scouting</div>
+          <div class="proj-type">VC Intelligence</div>
           <h3>Meridian AI Scout</h3>
-          <p>Venture scouting platform powered by AI. Discover companies, manage lists, and get live enrichment signals.</p>
+          <p>AI-powered venture scouting platform. Features Llama 3 summarization via the Groq API, Vercel serverless integration, and a custom keyboard-driven Cmd+K command palette.</p>
           <div class="proj-stack">
-            <span>React</span> <span>Groq API</span> <span>TypeScript</span>
+            <span>Next.js 15</span> <span>Groq API</span> <span>Llama 3</span> <span>Vercel Serverless</span>
           </div>
           <div class="proj-links">
-            <a href="https://github.com/nidhiatwork01-cmyk/meridian-ai-scout" target="_blank">GitHub ↗</a>
-            <a href="https://meridian-ai-scout.vercel.app/companies" target="_blank">Live ↗</a>
+            <a href="https://meridian-ai-scout.vercel.app/companies" target="_blank" rel="noopener noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/nidhiatwork01-cmyk/meridian-ai-scout" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
-        <!-- Project 04 -->
-        <div class="proj-card reveal" style="--d:0.3s">
+        <!-- Project 03: Pixii AEO Scout -->
+        <div class="proj-card reveal" data-category="ai-cloud">
+          <div class="proj-num">03</div>
+          <div class="proj-type">Multi-LLM Engine</div>
+          <h3>Pixii AEO Scout</h3>
+          <p>Multi-LLM engine designed to benchmark Gemini 1.5 and Llama 3 models. Honored with a "Top Project Submission" award and personally credited by the Pixii founder.</p>
+          <div class="proj-stack">
+            <span>Gemini 1.5</span> <span>Llama 3</span> <span>AI Benchmarks</span> <span>Founder Award</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://pixii-5zqb.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a href="https://www.linkedin.com/posts/nidhi-singh-b0834b288_buildinpublic-share-7466002310612164608-31qK/" target="_blank" rel="noopener noreferrer">Founder post <i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Project 04: minitop -->
+        <div class="proj-card reveal" data-category="systems-cpp">
           <div class="proj-num">04</div>
-          <div class="proj-type">Knowledge Management</div>
-          <h3>Second Brain (Gamma)</h3>
-          <p>Personal knowledge base with markdown support and tree-based organization for peak productivity.</p>
+          <div class="proj-type">Systems Programming</div>
+          <h3>minitop</h3>
+          <p>Low-level multi-threaded C++17 process scheduler and system monitor. Parses Linux /proc filesystems, calls POSIX APIs, and enforces memory safety using GDB, ASan, and TSan.</p>
           <div class="proj-stack">
-            <span>Next.js</span> <span>Clerk</span> <span>Prisma</span>
+            <span>C++17</span> <span>POSIX APIs</span> <span>Linux /proc</span> <span>ASan/TSan</span>
           </div>
           <div class="proj-links">
-            <a href="https://github.com/nidhiatwork01-cmyk/gamma" target="_blank">GitHub ↗</a>
-            <a href="https://gamma-wheat-eight.vercel.app/" target="_blank">Live ↗</a>
+            <a href="https://github.com/nidhiatwork01-cmyk" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
-        <!-- Project 05 -->
-        <div class="proj-card reveal" style="--d:0.4s">
+        <!-- Project 05: ThriftApp -->
+        <div class="proj-card reveal" data-category="full-stack">
           <div class="proj-num">05</div>
-          <div class="proj-type">Healthcare UI</div>
-          <h3>Grow (Dr. Maya Site)</h3>
-          <p>Pixel-perfect therapy services website with calm aesthetics, smooth transitions, and appointment workflows.</p>
+          <div class="proj-type">Full-Stack C2C</div>
+          <h3>ThriftApp</h3>
+          <p>A full-stack P2P fashion marketplace with PostgreSQL, JWT authentication, and Role-Based Access Control. Designed with OOP Factory & Observer patterns and validated with Jest/pytest.</p>
           <div class="proj-stack">
-            <span>React</span> <span>Tailwind CSS</span> <span>Vite</span>
+            <span>PostgreSQL</span> <span>JWT Auth</span> <span>Design Patterns</span> <span>Jest & pytest</span>
           </div>
           <div class="proj-links">
-            <a href="https://github.com/nidhiatwork01-cmyk/Grow" target="_blank">GitHub ↗</a>
-            <a href="https://grow-lyart.vercel.app/" target="_blank">Live ↗</a>
+            <a href="https://thriftapp-3ofiii.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/nidhiatwork01-cmyk/thriftapp" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
-        <!-- Project 06 -->
-        <div class="proj-card reveal" style="--d:0.5s">
+        <!-- Project 06: WhatBytes Solo Builds -->
+        <div class="proj-card reveal" data-category="full-stack">
           <div class="proj-num">06</div>
-          <div class="proj-type">Inventory System</div>
-          <h3>Retail POS Web UI</h3>
-          <p>Functional Point of Sale system with real-time data handling. Complete dashboard for inventory and sales tracking.</p>
+          <div class="proj-type">Production Solo Builds</div>
+          <h3>Skadoosh & Datamatics</h3>
+          <p>Two production builds. "Skadoosh" is a PlayStation CRM, booking calendar, and billing portal. "Datamatics" is a dynamic configurator interface for an AI LinkedIn scraper agent.</p>
           <div class="proj-stack">
-            <span>React</span> <span>Dashboard</span> <span>Real-time</span>
+            <span>React 19</span> <span>TypeScript</span> <span>Redux Toolkit</span> <span>Agent UI</span>
           </div>
           <div class="proj-links">
-            <a href="https://effortless-sorbet-fed880.netlify.app/" target="_blank">Live ↗</a>
-            <a href="https://github.com/nidhiatwork01-cmyk/WeAnalyze2" target="_blank">GitHub ↗</a>
+            <a href="https://github.com/nidhiatwork01-cmyk" target="_blank" rel="noopener noreferrer">GitHub <i class="fa-brands fa-github"></i></a>
           </div>
         </div>
 
-        <!-- Project 07 -->
-        <div class="proj-card reveal" style="--d:0.6s">
+        <!-- Project 07: Jui Project Case Study -->
+        <div class="proj-card reveal" data-category="case-studies">
           <div class="proj-num">07</div>
-          <div class="proj-type">Fintech UI</div>
-          <h3>Fintech Mobile Design</h3>
-          <p>Modern fintech interface clone focusing on responsive components, financial dashboards, and clean usability.</p>
+          <div class="proj-type">Operations Case Study</div>
+          <h3>Jui Project Turnaround</h3>
+          <p>An operational agile delivery turnaround. Designed a Granular Transparency Matrix and Quality-Velocity Trade-Off model to boost international client trust and delivery efficiency.</p>
           <div class="proj-stack">
-            <span>UI/UX</span> <span>React</span> <span>Mobile-First</span>
+            <span>Agile Delivery</span> <span>Process Eng</span> <span>Jira</span> <span>Metrics</span>
           </div>
           <div class="proj-links">
-            <a href="https://velvety-palmier-c1ee78.netlify.app/" target="_blank">Live ↗</a>
-            <a href="https://github.com/nidhiatwork01-cmyk/WeAnalyze1" target="_blank">GitHub ↗</a>
-          </div>
-        </div>
-
-        <!-- Project 08 -->
-        <div class="proj-card reveal" style="--d:0.7s">
-          <div class="proj-num">08</div>
-          <div class="proj-type">Utilities</div>
-          <h3>Smarter To-Do</h3>
-          <p>Interactive task management with custom hooks and minimal responsive design. Optimized for productivity.</p>
-          <div class="proj-stack">
-            <span>React Hooks</span> <span>Minimal UI</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://ecoapp-qi7f.vercel.app/" target="_blank">Live ↗</a>
-            <a href="https://github.com/nidhiatwork01-cmyk/smarter-todo" target="_blank">GitHub ↗</a>
-          </div>
-        </div>
-
-        <!-- Project 09 -->
-        <div class="proj-card reveal" style="--d:0.8s">
-          <div class="proj-num">09</div>
-          <div class="proj-type">Event Navigator</div>
-          <h3>Campus Navigator</h3>
-          <p>Inter-college bot-making competition platform. Navigates campus events and logistics seamlessly.</p>
-          <div class="proj-stack">
-            <span>Event Logic</span> <span>GitHub</span> <span>Loom Demo</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://www.loom.com/share/71f3cefe62d34a9b9b3b33b01b8cc35c" target="_blank">Demo ↗</a>
-            <a href="https://github.com/nidhiatwork01-cmyk/HACK-BOT" target="_blank">GitHub ↗</a>
+            <a href="https://docs.google.com/document/d/1NfVjlNRHM7JjKAteIRc0JksoV-69b5LO0qMHsVbuJ-Q/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Case Study Doc <i class="fa-solid fa-file-invoice"></i></a>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -280,22 +417,55 @@
       <div class="sec-label reveal"><span class="sec-dot"></span>Achievements & Speaking</div>
       <h2 class="section-title reveal">Beyond the <span class="grad">Screen.</span></h2>
       <div class="ach-grid">
+        <!-- Hack-A-Bot 2.0 -->
         <div class="ach-card ach-card--feat reveal">
-          <div class="ach-badge">🏆 1st Place</div>
-          <h3>Hack-A-Bot 2.0</h3>
-          <p class="ach-sub">AI/ML Competition · 2025</p>
-          <p>Won among 1000+ participants. 48-hour end-to-end product — ML model, APIs, responsive UI.</p>
-          <div class="ach-links"><a href="https://github.com/nidhiatwork01-cmyk/HACK-BOT" target="_blank">GitHub ↗</a><a href="https://drive.google.com/file/d/1IHuIKDZfRZ2SDdfxy0hXBp4riXkTVGjD/view" target="_blank">Demo ↗</a></div>
+          <div class="ach-badge">🏆 1st Place (out of 1000+)</div>
+          <h3>Hack-A-Bot 2.0 AI/ML</h3>
+          <p class="ach-sub">National Hackathon &middot; 2025</p>
+          <p>Won 1st place among 1,000+ competitors in a 48-hour sprint. Engineered a complete end-to-end AI agent, custom backend API, and a sleek frontend interface with real-time analytics.</p>
+          <div class="ach-links">
+            <a href="https://drive.google.com/file/d/1IHuIKDZfRZ2SDdfxy0hXBp4riXkTVGjD/view" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-play"></i> Demo Video</a>
+            <a href="https://github.com/nidhiatwork01-cmyk/HACK-BOT" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Repository</a>
+          </div>
           <img src="hackathon-image.jpeg" alt="Hack-A-Bot" class="ach-img" loading="lazy">
         </div>
-        <div class="ach-card reveal" style="--d:0.15s">
-          <div class="ach-badge">🎯 National Level</div>
-          <h3>NeuroHack Challenge 2026</h3>
-          <p class="ach-sub">IIT Guwahati · 2026</p>
-          <p>Placed in national-level hackathon. Full-stack AI product built under 36 hours.</p>
-          <div class="ach-links"><a href="https://drive.google.com/file/d/1M8bJ5e8FA7AN3eoH7gic6jrUGKKjS89n/view?usp=sharing" target="_blank">Certificate ↗</a></div>
+
+        <div class="ach-right-col">
+          <!-- NeuroHack -->
+          <div class="ach-card reveal" style="--d:0.1s">
+            <div class="ach-badge">🥈 Top 25 Finalist</div>
+            <h3>NeuroHack 2026</h3>
+            <p class="ach-sub">IIT Guwahati &middot; 2026</p>
+            <p>Stood as a national-level finalist at IIT Guwahati's 36-hour hackathon, building an AI-powered healthcare assistant with full accessibility features.</p>
+            <div class="ach-links">
+              <a href="https://drive.google.com/file/d/1M8bJ5e8FA7AN3eoH7gic6jrUGKKjS89n/view?usp=sharing" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> Certificate PDF</a>
+            </div>
+          </div>
+
+          <!-- Pixii Award -->
+          <div class="ach-card reveal" style="--d:0.2s">
+            <div class="ach-badge">⭐ Top Project Submission</div>
+            <h3>Pixii AEO Scout Award</h3>
+            <p class="ach-sub">Founder Credited &middot; 2026</p>
+            <p>Earned the "Top Project Submission Award" for building Pixii AEO Scout. Credited publicly by the Pixii founder for LLM optimization and benchmarking.</p>
+            <div class="ach-links">
+              <a href="https://www.linkedin.com/posts/nidhi-singh-b0834b288_buildinpublic-share-7466002310612164608-31qK/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> Founder recognition</a>
+            </div>
+          </div>
+
+          <!-- HighRadius PPO -->
+          <div class="ach-card reveal" style="--d:0.3s">
+            <div class="ach-badge">💼 Career Milestone</div>
+            <h3>Full-Time PPO Secured</h3>
+            <p class="ach-sub">HighRadius Corporation &middot; 2026</p>
+            <p>Secured an early full-time Pre-Placement Offer (PPO) of 8 LPA following an outstanding internship performance in financial ledger integration and SAP interfaces.</p>
+            <div class="ach-links">
+              <span class="status-badge status-badge--success"><i class="fa-solid fa-circle-check"></i> Accepted Offer</span>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="gallery reveal">
         <h3 class="gallery-title">Moments Captured</h3>
         <div class="gallery-grid">
@@ -320,16 +490,29 @@
       <h2 class="section-title reveal">Got a project?<br><span class="grad">Let's build it.</span></h2>
       <p class="contact-sub reveal">Open to new opportunities, collaborations, and interesting conversations about web development and AI.</p>
       <div class="contact-cards reveal">
-        <a href="mailto:nidhiatwork.01@gmail.com" class="c-card"><span class="c-icon">✉</span><span class="c-label">Email</span><span class="c-val">nidhiatwork.01@gmail.com</span></a>
-        <a href="https://www.linkedin.com/in/nidhi-singh-b0834b288/" target="_blank" class="c-card"><span class="c-icon">in</span><span class="c-label">LinkedIn</span><span class="c-val">Nidhi Singh</span></a>
-        <a href="https://github.com/nidhiatwork01-cmyk" target="_blank" class="c-card"><span class="c-icon">⌘</span><span class="c-label">GitHub</span><span class="c-val">nidhiatwork01-cmyk</span></a>
+        <div class="c-card c-card--copy" id="copy-email-btn" style="cursor: pointer; position: relative;">
+          <span class="c-icon"><i class="fa-regular fa-clone"></i></span>
+          <span class="c-label">Email (Click to Copy)</span>
+          <span class="c-val">nidhiatwork.01@gmail.com</span>
+          <span class="copy-tooltip" id="copy-tooltip">Click to Copy</span>
+        </div>
+        <a href="https://www.linkedin.com/in/nidhi-singh-b0834b288/" target="_blank" rel="noopener noreferrer" class="c-card">
+          <span class="c-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+          <span class="c-label">LinkedIn</span>
+          <span class="c-val">Nidhi Singh</span>
+        </a>
+        <a href="https://github.com/nidhiatwork01-cmyk" target="_blank" rel="noopener noreferrer" class="c-card">
+          <span class="c-icon"><i class="fa-brands fa-github"></i></span>
+          <span class="c-label">GitHub</span>
+          <span class="c-val">nidhiatwork01-cmyk</span>
+        </a>
       </div>
       <div class="reveal"><a href="mailto:nidhiatwork.01@gmail.com" class="btn btn--teal btn--lg">Hire Me →</a></div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer"><div class="container foot-inner"><span>© 2026 Nidhi Singh — Built with obsession.</span><span>KIIT Bhubaneswar · CGPA 9.09/10.0</span></div></footer>
+  <footer class="footer"><div class="container foot-inner"><span>© 2026 Nidhi Singh — Built with obsession.</span><span>KIIT Bhubaneswar · CGPA 9.01/10.0</span></div></footer>
 
   <script>
     window.addEventListener('scroll', () => {

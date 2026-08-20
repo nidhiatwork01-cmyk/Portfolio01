@@ -33,9 +33,9 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero hero-vars" id="hero">
-    <!-- LEFT: Photo slideshow -->
-    <section class="panel panel--left" id="panel-left">
+  <section class="hero" id="hero">
+    <!-- Background Slideshow -->
+    <div class="hero-bg">
       <div class="slideshow" id="slideshow-left">
         <img src="nidhi-stage-2.jpeg" alt="Nidhi on stage" class="slide slide--active">
         <img src="nidhi-closeup.jpeg" alt="Nidhi closeup" class="slide">
@@ -52,40 +52,39 @@
         <img src="speaking-3.jpg" alt="Nidhi speaking 3" class="slide">
         <img src="hackathon-image.jpeg" alt="Hackathon" class="slide">
       </div>
-      <div class="panel-overlay"></div>
-      <div class="panel-vignette"></div>
-      <div class="panel-content">
-        <div style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase;">
-          <span style="color: var(--cyan);">Nidhi Singh</span><span style="opacity: 0.5; margin: 0 10px;">|</span><span style="opacity: 0.8;">Software Engineer</span>
-        </div>
-        <div class="loc-tag"><span class="loc-dot" style="background: var(--cyan); box-shadow: 0 0 8px var(--cyan);"></span><span>Builder & Engineer&ensp;|&ensp;KIIT Bhubaneswar</span></div>
-        <h1 class="panel-title">I Build<br>What Ships</h1>
-        <p class="panel-sub">Builder & Software Engineer turning complex systems into high-performance software.</p>
-        <div class="hero-ctas">
-          <a href="#projects" class="btn btn--solid"><i class="fa-solid fa-code"></i> View Projects</a>
-          <a href="resume.pdf" download class="btn btn--ghost"><i class="fa-solid fa-file-pdf"></i> Resume (PDF)</a>
-        </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grain"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-dot"></span>
+        <span>Nidhi Singh</span>
+        <span class="hero-sep">—</span>
+        <span>Software Engineer</span>
+        <span class="hero-sep">—</span>
+        <span>KIIT Bhubaneswar</span>
       </div>
-    </section>
 
-    <!-- DIVIDER -->
-    <div class="divider" aria-hidden="true"><div class="divider-line"></div></div>
+      <h1 class="hero-title">
+        I Build What<br><span class="hero-title-accent">Ships.</span>
+      </h1>
 
-    <!-- RIGHT: Video -->
-    <section class="panel panel--right" id="panel-right">
-      <video class="panel-video" src="nidhi-video.mp4" autoplay loop muted playsinline></video>
-      <div class="panel-overlay"></div>
-      <div class="panel-vignette"></div>
-      <div class="panel-content">
-        <div class="loc-tag"><span class="loc-dot" style="background: var(--indigo); box-shadow: 0 0 8px var(--indigo);"></span><span>Hackathons & AI/ML&ensp;|&ensp;1st Place Winner</span></div>
-        <h1 class="panel-title">Beyond<br>The Code</h1>
-        <p class="panel-sub">Winning hackathons, building low-level systems, and scaling financial reconciliation pipelines.</p>
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn--solid btn--emerald"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
-        </div>
+      <p class="hero-desc">Builder & Software Engineer turning complex systems into high-performance software. Winning hackathons, building low-level systems, and scaling financial reconciliation pipelines.</p>
+
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn--solid"><i class="fa-solid fa-code"></i> View Projects</a>
+        <a href="resume.pdf" download class="btn btn--ghost"><i class="fa-solid fa-file-pdf"></i> Resume (PDF)</a>
+        <a href="#contact" class="btn btn--emerald"><i class="fa-solid fa-paper-plane"></i> Get In Touch</a>
       </div>
-    </section>
+    </div>
 
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
   </section>
 
   <!-- Live Stats Counter Banner -->
@@ -514,16 +513,6 @@
   <!-- FOOTER -->
   <footer class="footer"><div class="container foot-inner"><span>© 2026 Nidhi Singh — Built with obsession.</span><span>KIIT Bhubaneswar · CGPA 9.01/10.0</span></div></footer>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-  </script>
   <script src="script.js"></script>
 </body>
 </html>

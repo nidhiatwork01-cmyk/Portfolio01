@@ -23,31 +23,10 @@
 
   setInterval(nextSlide, 4500);
 
-  /* ── DIVIDER TRACKING ── */
-  const divider = document.querySelector('.divider');
-  const panels = document.querySelectorAll('.panel');
-
-  function repositionDivider() {
-    if (!panels.length || !divider) return;
-    const left = panels[0].getBoundingClientRect();
-    divider.style.left = left.right + 'px';
-  }
-
-  if (window.ResizeObserver) {
-    const ro = new ResizeObserver(repositionDivider);
-    panels.forEach(p => ro.observe(p));
-  }
-  panels.forEach(p => p.addEventListener('transitionend', repositionDivider));
-  window.addEventListener('resize', repositionDivider);
-  window.addEventListener('load', repositionDivider);
-
   /* ── NAVBAR SCROLL STATE ── */
   const navbar = document.getElementById('navbar');
-  let lastScroll = 0;
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    navbar.classList.toggle('scrolled', scrollY > 60);
-    lastScroll = scrollY;
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 
   /* ── MOBILE BURGER ── */
@@ -76,7 +55,6 @@
       }
     });
   }, { threshold: 0.06, rootMargin: '0px 0px -50px 0px' });
-
   reveals.forEach(el => revealObserver.observe(el));
 
   /* ── COUNTER ANIMATION ── */
@@ -91,33 +69,29 @@
         const steps = 30;
         const stepTime = duration / steps;
         const stepVal = target / steps;
-
         const timer = setInterval(() => {
           count += stepVal;
-          if (count >= target) {
-            count = target;
-            clearInterval(timer);
-          }
+          if (count >= target) { count = target; clearInterval(timer); }
           el.textContent = Math.round(count);
         }, stepTime);
         counterObserver.unobserve(el);
       }
     });
   }, { threshold: 0.5 });
-
   counters.forEach(c => counterObserver.observe(c));
 
-  /* ── HERO ENTRANCE ── */
+  /* ── HERO CONTENT ENTRANCE ── */
   window.addEventListener('load', () => {
-    document.querySelectorAll('.panel-content').forEach((content, i) => {
-      content.style.opacity = '0';
-      content.style.transform = 'translateY(25px)';
-      content.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+      heroContent.style.opacity = '0';
+      heroContent.style.transform = 'translateY(30px)';
+      heroContent.style.transition = 'opacity 1s ease, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1)';
       setTimeout(() => {
-        content.style.opacity = '1';
-        content.style.transform = 'translateY(0)';
-      }, 350 + i * 200);
-    });
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+      }, 400);
+    }
 
     // Animate stats banner entrance
     const statsBanner = document.querySelector('.stats-banner');
@@ -128,7 +102,7 @@
       setTimeout(() => {
         statsBanner.style.opacity = '1';
         statsBanner.style.transform = 'translateY(0)';
-      }, 900);
+      }, 1000);
     }
   });
 

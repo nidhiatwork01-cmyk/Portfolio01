@@ -127,7 +127,7 @@ export default function Navbar({ onOpenCommandPalette }: NavbarProps) {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/10 rounded-full px-3 py-1 backdrop-blur-sm">
+          <nav className="hidden md:flex items-center gap-1 bg-[#0b0d13]/90 border border-white/15 rounded-full px-3 py-1 backdrop-blur-md shadow-lg">
             {navLinks.map((link) => (
               <a
                 key={link.code}

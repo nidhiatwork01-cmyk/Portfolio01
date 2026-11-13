@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, CheckCircle2, Layers, Cpu, Zap } from "lucide-react";
+import { Sparkles, CheckCircle2, Plus, Layers, ArrowUpRight, Check } from "lucide-react";
 import { SKILL_CATEGORIES } from "@/data/portfolioData";
 import { playUiSound } from "@/lib/sound";
 
@@ -11,14 +11,14 @@ export default function SkillsSection() {
   const activeCategory = SKILL_CATEGORIES[selectedCategoryIdx];
 
   const flagshipArsenal = [
-    { name: "React 19", role: "Concurrent UI" },
-    { name: "Next.js 15", role: "App Router & SSR" },
-    { name: "TypeScript", role: "Strict Generics" },
-    { name: "Tailwind CSS", role: "Design Tokens" },
-    { name: "Framer Motion", role: "Spring Kinetics" },
-    { name: "C++17", role: "Kernel /proc Telemetry" },
-    { name: "PostgreSQL", role: "Relational Schemas" },
-    { name: "Gemini & Llama 3", role: "LLM Streaming" }
+    { name: "React 19", role: "Concurrent UI", tag: "Frontend" },
+    { name: "Next.js 15", role: "App Router & SSR", tag: "Full Stack" },
+    { name: "TypeScript", role: "Strict Generics", tag: "Language" },
+    { name: "Tailwind CSS", role: "Design Tokens", tag: "Styling" },
+    { name: "Framer Motion", role: "Spring Kinetics", tag: "Motion" },
+    { name: "C++17", role: "Kernel /proc Telemetry", tag: "Systems" },
+    { name: "PostgreSQL", role: "Relational Schemas", tag: "Database" },
+    { name: "Gemini & Llama 3", role: "LLM Streaming", tag: "AI Engines" }
   ];
 
   const skillProductionContext: Record<string, string> = {
@@ -65,32 +65,39 @@ export default function SkillsSection() {
   };
 
   return (
-    <section id="skills" className="py-32 md:py-44 border-b border-white/5 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-12 pb-6 border-b border-white/10">
+    <section id="skills" className="py-28 md:py-36 bg-[#f8fafc] text-[#0f172a] border-y border-slate-200 relative overflow-hidden">
+      {/* Soft Pearlescent Mintly Ambient Halo (Reference 3) */}
+      <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-tr from-pink-200/40 via-purple-100/30 to-cyan-100/40 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-sky-100/50 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header (Mintly Style: Bold Editorial Typography) */}
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-12 pb-5 border-b border-slate-200">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-mono-tech text-[#d4ff00]">03</span>
-            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase tracking-tight">
-              TECHNICAL EXPERTISE
+            <span className="text-xs font-mono-tech font-bold text-slate-900 bg-white px-3 py-1 rounded-full border border-slate-200 shadow-sm">
+              03 SKILLS
+            </span>
+            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-[#0f172a] tracking-tight">
+              Systems <span className="text-slate-400 font-normal">Frameworks</span> Tooling
             </h2>
           </div>
-          <p className="font-mono-tech text-xs text-[#8e95a5] mt-2 sm:mt-0 tracking-widest uppercase">
+          <p className="font-mono-tech text-xs text-slate-500 mt-2 sm:mt-0 uppercase tracking-widest">
             {activeCategory.subtitle}
           </p>
         </div>
 
-        {/* STAR FEATURE: Flagship Tech Arsenal Strip */}
-        <div className="mb-14 p-6 sm:p-8 rounded-3xl glass-panel border border-[#d4ff00]/20 bg-gradient-to-r from-white/[0.03] via-white/[0.01] to-transparent shadow-xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-            <div className="flex items-center gap-2.5">
-              <Sparkles className="w-4 h-4 text-[#d4ff00]" />
-              <h3 className="font-mono-tech text-xs font-bold text-white uppercase tracking-wider">
+        {/* Flagship Arsenal Strip (Light Frosted Pearlescent Capsules) */}
+        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-white/80 backdrop-blur-md border border-slate-200/90 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-100">
+            <div className="flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-[#6366f1]" />
+              <h3 className="font-mono-tech text-xs font-bold text-slate-900 uppercase tracking-wider">
                 CORE PRODUCTION ARSENAL &amp; DAILY STACK
               </h3>
             </div>
-            <span className="text-[11px] font-mono-tech text-[#d4ff00]">
-              VERIFIED IN PRODUCTION APPS &amp; SYSTEMS
+            <span className="text-[11px] font-mono-tech text-emerald-600 font-semibold flex items-center gap-1">
+              <Check className="w-3.5 h-3.5" />
+              <span>VERIFIED IN PRODUCTION</span>
             </span>
           </div>
 
@@ -99,13 +106,13 @@ export default function SkillsSection() {
               <div
                 key={idx}
                 onMouseEnter={() => playUiSound("hover")}
-                className="p-3.5 rounded-2xl bg-[#08090d]/90 border border-white/10 hover:border-[#d4ff00]/60 hover:bg-[#d4ff00]/10 transition-all text-center group cursor-default"
+                className="p-3.5 rounded-2xl bg-slate-50 hover:bg-indigo-50/60 border border-slate-200/80 hover:border-indigo-300 transition-all text-center group cursor-default shadow-xs"
               >
-                <div className="w-2 h-2 rounded-full bg-[#d4ff00] shadow-[0_0_8px_#d4ff00] mx-auto mb-2 group-hover:scale-125 transition-transform" />
-                <div className="font-sans font-bold text-xs sm:text-sm text-white group-hover:text-[#d4ff00] transition-colors">
+                <div className="w-2 h-2 rounded-full bg-[#6366f1] mx-auto mb-2 group-hover:scale-125 transition-transform" />
+                <div className="font-sans font-bold text-xs sm:text-sm text-slate-900 group-hover:text-[#6366f1] transition-colors">
                   {tech.name}
                 </div>
-                <div className="text-[10px] font-mono-tech text-[#8e95a5] mt-0.5 truncate">
+                <div className="text-[10px] font-mono-tech text-slate-500 mt-0.5 truncate">
                   {tech.role}
                 </div>
               </div>
@@ -113,7 +120,7 @@ export default function SkillsSection() {
           </div>
         </div>
 
-        {/* 5 Minimalist Discipline Tabs */}
+        {/* 5 Minimalist Discipline Tabs (Mintly Style Pill Navigation) */}
         <div className="flex flex-wrap items-center gap-2 mb-10">
           {SKILL_CATEGORIES.map((cat, idx) => {
             const isSelected = selectedCategoryIdx === idx;
@@ -127,8 +134,8 @@ export default function SkillsSection() {
                 data-cursor={cat.title.split(",")[0]}
                 className={`px-5 py-2.5 rounded-full text-xs font-mono-tech transition-all flex items-center gap-2 ${
                   isSelected
-                    ? "bg-[#d4ff00] text-[#08090d] font-bold shadow-lg glow-lime-sm"
-                    : "text-[#8e95a5] hover:text-white hover:bg-white/[0.04]"
+                    ? "bg-[#0f172a] text-white font-bold shadow-md"
+                    : "bg-white hover:bg-slate-100 text-slate-600 border border-slate-200 shadow-2xs"
                 }`}
               >
                 <span>{cat.title}</span>
@@ -137,59 +144,56 @@ export default function SkillsSection() {
           })}
         </div>
 
-        {/* Star Skill Grid with AnimatePresence Category Wave */}
+        {/* Crisp White Skill Cards with Mintly Geometric Plus Aesthetic */}
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedCategoryIdx}
-            initial={{ opacity: 0, scale: 0.96, y: 10 }}
+            initial={{ opacity: 0, scale: 0.97, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: -10 }}
+            exit={{ opacity: 0, scale: 0.97, y: -10 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {activeCategory.skills.map((skill, idx) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.04 }}
-                whileHover={{ y: -6, scale: 1.01 }}
+                whileHover={{ y: -5 }}
                 onMouseEnter={() => playUiSound("hover")}
-                className="p-6 rounded-3xl glass-panel group flex flex-col justify-between border border-white/10 hover:border-[#d4ff00]/50 transition-all duration-300 relative overflow-hidden hover:shadow-[0_15px_40px_rgba(212,255,0,0.06)]"
+                className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 hover:border-slate-400/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
-                {/* Tactical HUD Corner Accent */}
-                <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-white/10 group-hover:border-[#d4ff00] transition-colors" />
-                <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-white/10 group-hover:border-[#d4ff00] transition-colors" />
-
                 <div>
-                  {/* Header: Skill Name & Prominence Badge */}
+                  {/* Header: Skill Name & Geometric Plus Button */}
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2.5">
-                      <span className="w-2 h-2 rounded-full bg-[#d4ff00] shadow-[0_0_8px_#d4ff00] group-hover:scale-125 transition-transform" />
-                      <span className="font-sans font-bold text-base text-white group-hover:text-[#d4ff00] transition-colors">
+                      <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-[#0f172a] group-hover:text-white transition-colors">
+                        <Plus className="w-4 h-4" />
+                      </div>
+                      <span className="font-sans font-bold text-base text-slate-900 group-hover:text-[#6366f1] transition-colors">
                         {skill.name}
                       </span>
                     </div>
 
                     {skill.highlight ? (
-                      <span className="px-2.5 py-1 rounded-full bg-[#d4ff00]/15 border border-[#d4ff00]/40 text-[10px] font-mono-tech font-bold text-[#d4ff00] flex items-center gap-1">
-                        <Sparkles className="w-3 h-3 animate-pulse" />
+                      <span className="px-2.5 py-0.5 rounded-full bg-indigo-50 border border-indigo-200 text-[10px] font-mono-tech font-bold text-[#6366f1]">
                         CORE
                       </span>
                     ) : (
-                      <span className="text-[10px] font-mono-tech text-white/40">
+                      <span className="text-[10px] font-mono-tech text-slate-400">
                         LEVEL {skill.level}%
                       </span>
                     )}
                   </div>
 
-                  {/* Star Feature: Explicitly Specified Production Application */}
-                  <div className="p-3.5 rounded-2xl bg-white/[0.02] border border-white/5 group-hover:border-white/15 transition-colors">
-                    <div className="text-[10px] font-mono-tech text-[#d4ff00] uppercase tracking-wider font-semibold mb-1.5 flex items-center gap-1">
+                  {/* Specified Production Application */}
+                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 group-hover:bg-slate-50/80 transition-colors">
+                    <div className="text-[10px] font-mono-tech text-indigo-600 uppercase tracking-wider font-bold mb-1.5 flex items-center gap-1">
                       <Layers className="w-3 h-3" />
                       <span>PRODUCTION APPLICATION:</span>
                     </div>
-                    <p className="text-xs text-[#9ca3af] leading-relaxed font-sans">
+                    <p className="text-xs text-slate-600 leading-relaxed font-sans">
                       {skillProductionContext[skill.name] ||
                         "Production-tested across high-scale applications with clean architecture and strict typing."}
                     </p>
@@ -197,12 +201,12 @@ export default function SkillsSection() {
                 </div>
 
                 {/* Footer Meta Row */}
-                <div className="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono-tech text-white/40">
-                  <span className="flex items-center gap-1 text-emerald-400">
+                <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono-tech text-slate-400">
+                  <span className="flex items-center gap-1.5 text-emerald-600 font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Production Verified</span>
                   </span>
-                  <span className="text-white/20 font-mono-tech">SYS_ID_0{idx + 1}</span>
+                  <span className="text-slate-300 font-mono-tech">SPEC_0{idx + 1}</span>
                 </div>
               </motion.div>
             ))}

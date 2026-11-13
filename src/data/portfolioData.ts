@@ -106,7 +106,7 @@ export const PROJECTS: Project[] = [
       { label: "Re-render Shift", value: "0.00 CLS" },
       { label: "State Sync", value: "URL Query" }
     ],
-    image: "/speaking-1.jpg"
+    image: "/aura-skincare.png"
   },
   {
     id: "minitop-engine",

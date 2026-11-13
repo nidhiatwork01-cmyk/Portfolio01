@@ -99,20 +99,22 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
 
         {/* View Mode A: Spacious 2-Column Luxury Cards with Highlighted Tech Stack */}
         {viewMode === "cards" && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-            {filteredProjects.map((project) => (
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+            {filteredProjects.map((project, projectIdx) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
+                layout
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.45, delay: projectIdx * 0.08 }}
+                whileHover={{ y: -8 }}
                 onClick={() => {
                   playUiSound("click");
                   onSelectProject(project);
                 }}
                 data-cursor="VIEW"
-                className="group relative rounded-3xl glass-panel p-6 sm:p-8 flex flex-col justify-between cursor-pointer"
+                className="group relative rounded-3xl glass-panel p-6 sm:p-8 flex flex-col justify-between cursor-pointer border border-white/10 hover:border-[#d4ff00]/40 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(212,255,0,0.08)]"
               >
                 <div>
                   {/* Top Meta Row */}
@@ -120,13 +122,13 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                     <span className="text-[11px] font-mono-tech uppercase text-[#8e95a5] tracking-wider">
                       {project.category}
                     </span>
-                    <span className="text-[11px] font-mono-tech text-[#d4ff00] flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3" />
+                    <span className="text-[11px] font-mono-tech text-[#d4ff00] flex items-center gap-1.5 bg-[#d4ff00]/10 px-2.5 py-0.5 rounded-full border border-[#d4ff00]/20">
+                      <Sparkles className="w-3 h-3 animate-pulse" />
                       {project.highlightBadge}
                     </span>
                   </div>
 
-                  {/* Cinematic Image Preview */}
+                  {/* Cinematic Image Preview with Interactive Laser Scanning Beam */}
                   {project.image ? (
                     <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-6 bg-[#08090d] border border-white/5">
                       <Image
@@ -135,6 +137,8 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-85 group-hover:opacity-100"
                       />
+                      {/* Laser Scanning Beam Animation on Hover */}
+                      <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#d4ff00] to-transparent -top-2 group-hover:top-[105%] transition-all duration-1000 ease-in-out pointer-events-none opacity-0 group-hover:opacity-90 shadow-[0_0_12px_#d4ff00]" />
                     </div>
                   ) : (
                     <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-white/[0.04] to-transparent border border-white/5 flex flex-col items-center justify-center p-6 text-center">
@@ -147,6 +151,8 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                       <div className="text-[11px] font-mono-tech text-[#8e95a5] mt-2">
                         &lt;1.0% CPU OVERHEAD • LOCK-FREE
                       </div>
+                      {/* Laser Scanning Beam Animation on Hover */}
+                      <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#d4ff00] to-transparent -top-2 group-hover:top-[105%] transition-all duration-1000 ease-in-out pointer-events-none opacity-0 group-hover:opacity-90 shadow-[0_0_12px_#d4ff00]" />
                     </div>
                   )}
 
@@ -208,7 +214,7 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         )}
 
         {/* View Mode B: Systems Matrix */}

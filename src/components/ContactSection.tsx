@@ -139,80 +139,103 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right Column: Sleek Message Composer */}
+          {/* Right Column: Cyber Terminal Message Composer */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl glass-panel relative">
-              {submitted ? (
-                <div className="py-12 text-center space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-[#d4ff00]/10 border border-[#d4ff00] text-[#d4ff00] mx-auto flex items-center justify-center">
-                    <Check className="w-6 h-6" />
-                  </div>
-                  <h4 className="font-display font-bold text-2xl text-white uppercase">
-                    DISPATCH TRANSMITTED
-                  </h4>
-                  <p className="text-sm text-[#8e95a5] max-w-md mx-auto">
-                    Your mail client has been opened. You can also reach out directly to{" "}
-                    <span className="text-white font-mono-tech">{PERSONAL_INFO.email}</span>.
-                  </p>
+            <div className="rounded-3xl glass-panel relative overflow-hidden border border-white/10 hover:border-[#d4ff00]/30 transition-all duration-300 shadow-2xl">
+              {/* Terminal Window Header Bar */}
+              <div className="flex items-center justify-between px-6 py-4 bg-white/[0.02] border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                  <span className="text-[11px] font-mono-tech text-white/50 ml-2">
+                    DISPATCH_TERMINAL_v2.4
+                  </span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5 text-xs font-mono-tech">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-[#8e95a5] mb-2 uppercase tracking-wider">
-                        YOUR NAME
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={senderName}
-                        onChange={(e) => setSenderName(e.target.value)}
-                        placeholder="e.g. Alex / Engineering Lead"
-                        className="w-full px-5 py-3.5 rounded-2xl bg-white/[0.02] border border-white/10 focus:border-[#d4ff00] focus:outline-none text-white transition-colors"
-                      />
+                <div className="flex items-center gap-2 text-[10px] font-mono-tech text-[#d4ff00]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] animate-pulse" />
+                  <span>ONLINE // ENCRYPTED</span>
+                </div>
+              </div>
+
+              <div className="p-8 sm:p-10">
+                {submitted ? (
+                  <div className="py-12 text-center space-y-4">
+                    <div className="w-14 h-14 rounded-full bg-[#d4ff00]/10 border-2 border-[#d4ff00] text-[#d4ff00] mx-auto flex items-center justify-center shadow-[0_0_20px_rgba(212,255,0,0.3)]">
+                      <Check className="w-7 h-7" />
+                    </div>
+                    <h4 className="font-display font-bold text-2xl text-white uppercase tracking-tight">
+                      DISPATCH TRANSMITTED
+                    </h4>
+                    <p className="text-sm text-[#8e95a5] max-w-md mx-auto font-sans leading-relaxed">
+                      Your default mail client has opened. You can also write directly to{" "}
+                      <span className="text-[#d4ff00] font-mono-tech font-bold">{PERSONAL_INFO.email}</span>.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6 text-xs font-mono-tech">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-[#8e95a5] mb-2 uppercase tracking-wider flex items-center gap-1.5">
+                          <span className="text-[#d4ff00]">&gt;</span>
+                          <span>YOUR NAME</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={senderName}
+                          onChange={(e) => setSenderName(e.target.value)}
+                          placeholder="e.g. Alex / Engineering Lead"
+                          className="w-full px-5 py-3.5 rounded-2xl bg-[#08090d]/80 border border-white/10 focus:border-[#d4ff00] focus:ring-1 focus:ring-[#d4ff00]/40 focus:outline-none text-white transition-all shadow-inner"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[#8e95a5] mb-2 uppercase tracking-wider flex items-center gap-1.5">
+                          <span className="text-[#d4ff00]">&gt;</span>
+                          <span>EMAIL ADDRESS</span>
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={senderEmail}
+                          onChange={(e) => setSenderEmail(e.target.value)}
+                          placeholder="e.g. alex@company.com"
+                          className="w-full px-5 py-3.5 rounded-2xl bg-[#08090d]/80 border border-white/10 focus:border-[#d4ff00] focus:ring-1 focus:ring-[#d4ff00]/40 focus:outline-none text-white transition-all shadow-inner"
+                        />
+                      </div>
                     </div>
 
                     <div>
-                      <label className="block text-[#8e95a5] mb-2 uppercase tracking-wider">
-                        EMAIL ADDRESS
+                      <label className="block text-[#8e95a5] mb-2 uppercase tracking-wider flex items-center justify-between">
+                        <span className="flex items-center gap-1.5">
+                          <span className="text-[#d4ff00]">&gt;</span>
+                          <span>PROJECT OR MESSAGE</span>
+                        </span>
+                        <span className="text-white/30 font-mono-tech">{message.length}/500</span>
                       </label>
-                      <input
-                        type="email"
+                      <textarea
+                        rows={5}
                         required
-                        value={senderEmail}
-                        onChange={(e) => setSenderEmail(e.target.value)}
-                        placeholder="e.g. alex@company.com"
-                        className="w-full px-5 py-3.5 rounded-2xl bg-white/[0.02] border border-white/10 focus:border-[#d4ff00] focus:outline-none text-white transition-colors"
+                        maxLength={500}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="Tell me about the engineering role, scope, or challenge..."
+                        className="w-full px-5 py-3.5 rounded-2xl bg-[#08090d]/80 border border-white/10 focus:border-[#d4ff00] focus:ring-1 focus:ring-[#d4ff00]/40 focus:outline-none text-white transition-all resize-none font-sans text-sm shadow-inner"
                       />
                     </div>
-                  </div>
 
-                  <div>
-                    <label className="block text-[#8e95a5] mb-2 uppercase tracking-wider flex items-center justify-between">
-                      <span>PROJECT OR MESSAGE</span>
-                      <span className="text-white/30">{message.length}/500</span>
-                    </label>
-                    <textarea
-                      rows={5}
-                      required
-                      maxLength={500}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Tell me about the role, product scope, or challenge..."
-                      className="w-full px-5 py-3.5 rounded-2xl bg-white/[0.02] border border-white/10 focus:border-[#d4ff00] focus:outline-none text-white transition-colors resize-none font-sans text-sm"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    data-cursor="TRANSMIT"
-                    className="w-full py-4 rounded-full bg-[#d4ff00] hover:bg-[#c2eb00] text-[#08090d] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 glow-lime"
-                  >
-                    <Send className="w-4 h-4" />
-                    <span>SEND MESSAGE</span>
-                  </button>
-                </form>
-              )}
+                    <button
+                      type="submit"
+                      data-cursor="TRANSMIT"
+                      className="w-full py-4 rounded-full bg-[#d4ff00] hover:bg-[#c2eb00] text-[#08090d] font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 glow-lime hover:scale-[1.01] shadow-xl"
+                    >
+                      <Send className="w-4 h-4" />
+                      <span>TRANSMIT DISPATCH</span>
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </div>

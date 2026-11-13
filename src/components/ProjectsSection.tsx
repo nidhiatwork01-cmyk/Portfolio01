@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { LayoutGrid, Table, ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
+import { LayoutGrid, Table, ArrowUpRight, Sparkles, Layers } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 import { PROJECTS, Project } from "@/data/portfolioData";
 import { playUiSound } from "@/lib/sound";
@@ -51,7 +51,7 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                 }`}
               >
                 <LayoutGrid className="w-3.5 h-3.5" />
-                <span>GRID</span>
+                <span>CARDS</span>
               </button>
 
               <button
@@ -97,7 +97,7 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
           })}
         </div>
 
-        {/* View Mode A: Spacious 2-Column Luxury Cards */}
+        {/* View Mode A: Spacious 2-Column Luxury Cards with Highlighted Tech Stack */}
         {viewMode === "cards" && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {filteredProjects.map((project) => (
@@ -150,18 +150,46 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                     </div>
                   )}
 
-                  {/* Title & Subtitle */}
+                  {/* Title & Technical Subtitle */}
                   <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white group-hover:text-[#d4ff00] transition-colors uppercase">
                     {project.title}
                   </h3>
-                  <p className="font-mono-tech text-xs text-[#8e95a5] mt-1.5 mb-6">
+                  <p className="font-mono-tech text-xs text-[#d4ff00] mt-1 mb-3">
                     {project.subtitle}
                   </p>
+
+                  {/* Clean Engineering Summary */}
+                  <p className="text-sm text-[#9ca3af] leading-relaxed font-sans mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Star Feature: Highlighted Skills & Tech Stack Showcase */}
+                  <div className="mb-6 p-4 rounded-2xl bg-white/[0.02] border border-white/10 group-hover:border-[#d4ff00]/30 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2 text-[10px] font-mono-tech font-bold text-[#d4ff00] uppercase tracking-wider">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] shadow-[0_0_8px_#d4ff00]" />
+                        <span>CORE TECHNOLOGIES &amp; SKILLS</span>
+                      </div>
+                      <span className="text-[10px] font-mono-tech text-white/40 uppercase">
+                        {project.techStack.length} Stacked
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#08090d]/80 hover:bg-[#d4ff00]/15 border border-white/10 hover:border-[#d4ff00]/60 text-xs font-mono-tech text-white hover:text-[#d4ff00] transition-all duration-200 shadow-sm group/pill"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] shadow-[0_0_6px_#d4ff00] group-hover/pill:scale-125 transition-transform" />
+                          <span className="font-semibold tracking-tight">{tech}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Footer Meta Row */}
+                {/* Footer Meta Row: Key Metric + Action Trigger */}
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                  {/* Primary Key Metric */}
                   <div className="flex items-baseline gap-2">
                     <span className="font-display font-bold text-lg text-[#d4ff00]">
                       {project.metrics[0]?.value}
@@ -171,7 +199,6 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                     </span>
                   </div>
 
-                  {/* Action Link */}
                   <div className="flex items-center gap-3">
                     <span className="text-xs font-mono-tech font-bold text-white group-hover:text-[#d4ff00] flex items-center gap-1.5 transition-colors">
                       <span>CASE STUDY</span>
@@ -192,8 +219,8 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                 <tr className="border-b border-white/10 text-[#8e95a5]">
                   <th className="py-4 px-6 uppercase tracking-wider">Project</th>
                   <th className="py-4 px-6 uppercase tracking-wider">Category</th>
-                  <th className="py-4 px-6 uppercase tracking-wider">Core Stack</th>
-                  <th className="py-4 px-6 uppercase tracking-wider">Benchmark</th>
+                  <th className="py-4 px-6 uppercase tracking-wider">Core Technologies</th>
+                  <th className="py-4 px-6 uppercase tracking-wider">Key Metric</th>
                   <th className="py-4 px-6 uppercase tracking-wider text-right">Links</th>
                 </tr>
               </thead>
@@ -212,7 +239,7 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                       <div className="font-bold text-white group-hover:text-[#d4ff00] transition-colors text-base font-sans uppercase">
                         {project.title}
                       </div>
-                      <div className="text-[11px] text-[#8e95a5] mt-0.5">{project.subtitle}</div>
+                      <div className="text-[11px] text-[#d4ff00] mt-0.5">{project.subtitle}</div>
                     </td>
 
                     <td className="py-5 px-6 text-[#8e95a5]">
@@ -220,12 +247,13 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                     </td>
 
                     <td className="py-5 px-6">
-                      <div className="flex flex-wrap gap-1.5 max-w-xs">
-                        {project.techStack.slice(0, 3).map((tech, idx) => (
+                      <div className="flex flex-wrap gap-1.5 max-w-sm">
+                        {project.techStack.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] text-[#8e95a5]"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#08090d] text-[11px] font-mono-tech font-medium text-white border border-white/10 hover:border-[#d4ff00]/50 hover:text-[#d4ff00] transition-colors"
                           >
+                            <span className="w-1 h-1 rounded-full bg-[#d4ff00] shadow-[0_0_4px_#d4ff00]" />
                             {tech}
                           </span>
                         ))}

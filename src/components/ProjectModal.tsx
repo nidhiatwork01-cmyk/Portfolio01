@@ -125,28 +125,36 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
 
             {/* Architectural Deep-Dive Narrative */}
-            <div className="space-y-3">
-              <h4 className="font-mono-tech text-xs uppercase tracking-widest text-[#9ca3af]">
-                ARCHITECTURAL SPECIFICATION &amp; TECHNICAL EXECUTION
-              </h4>
-              <p className="text-sm sm:text-base text-[#f3f4f6] leading-relaxed">
+            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-2.5">
+              <div className="flex items-center gap-2 text-xs font-mono-tech font-bold uppercase tracking-wider text-[#d4ff00]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] shadow-[0_0_8px_#d4ff00]" />
+                <span>ARCHITECTURAL EXECUTION &amp; BENCHMARK</span>
+              </div>
+              <p className="text-sm sm:text-base text-[#e5e7eb] leading-relaxed font-sans font-normal">
                 {project.longDescription}
               </p>
             </div>
 
-            {/* Tech Stack Chips */}
-            <div className="space-y-3">
-              <h4 className="font-mono-tech text-xs uppercase tracking-widest text-[#9ca3af]">
-                SYSTEMS &amp; DEPENDENCY MATRIX
-              </h4>
-              <div className="flex flex-wrap gap-2">
+            {/* Star Feature: Highlighted Skills & Dependency Matrix */}
+            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/15 space-y-3.5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2 text-xs font-mono-tech font-bold uppercase tracking-wider text-white">
+                  <Sparkles className="w-4 h-4 text-[#d4ff00]" />
+                  <span>CORE SKILLS &amp; PRODUCTION STACK</span>
+                </div>
+                <span className="text-[11px] font-mono-tech text-[#d4ff00] font-bold">
+                  {project.techStack.length} VERIFIED TECHNOLOGIES
+                </span>
+              </div>
+
+              <div className="flex flex-wrap gap-2.5">
                 {project.techStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-mono-tech text-[#f3f4f6] flex items-center gap-1.5"
+                    className="px-3.5 py-2 rounded-xl bg-[#08090d] border border-white/15 hover:border-[#d4ff00] text-xs font-mono-tech font-semibold text-white hover:text-[#d4ff00] flex items-center gap-2 shadow-md transition-all group/modalpill"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#d4ff00]" />
-                    {tech}
+                    <span className="w-2 h-2 rounded-full bg-[#d4ff00] shadow-[0_0_8px_#d4ff00] group-hover/modalpill:scale-125 transition-transform" />
+                    <span>{tech}</span>
                   </span>
                 ))}
               </div>

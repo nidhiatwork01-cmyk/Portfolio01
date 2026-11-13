@@ -99,6 +99,23 @@ export default function HeroSection({ onOpenCommandPalette }: HeroSectionProps) 
               </kbd>
             </button>
           </div>
+
+          {/* Star Feature: Core Arsenal Strip */}
+          <div className="pt-2 flex flex-wrap items-center gap-2">
+            <span className="text-[10px] font-mono-tech text-white/50 uppercase tracking-wider mr-1 flex items-center gap-1.5">
+              <Sparkles className="w-3 h-3 text-[#d4ff00]" />
+              CORE ARSENAL:
+            </span>
+            {["React 19", "Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion", "C++17", "PostgreSQL", "LLM APIs"].map((skill, idx) => (
+              <span
+                key={idx}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono-tech text-white hover:border-[#d4ff00]/50 hover:text-[#d4ff00] transition-colors"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] shadow-[0_0_6px_#d4ff00]" />
+                {skill}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         {/* Sleek Minimalist Metric Rail (No heavy box cards!) */}

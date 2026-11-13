@@ -72,32 +72,39 @@ export default function ExperienceSection() {
                 ))}
               </ul>
 
-              {/* Technologies & Proof Link */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-white/5">
+              {/* Technologies & Stack Highlight */}
+              <div className="pt-6 border-t border-white/5 space-y-3">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div className="flex items-center gap-2 text-[10px] font-mono-tech font-bold text-[#d4ff00] uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] shadow-[0_0_8px_#d4ff00]" />
+                    <span>PRODUCTION SKILLS &amp; TECHNOLOGIES USED</span>
+                  </div>
+                  {exp.proofUrl && (
+                    <a
+                      href={exp.proofUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      data-cursor="PROOF"
+                      onClick={() => playUiSound("hover")}
+                      className="inline-flex items-center gap-1.5 text-xs font-mono-tech text-[#d4ff00] hover:underline"
+                    >
+                      <span>{exp.proofLabel || "View Proof"}</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
+
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, techIdx) => (
                     <span
                       key={techIdx}
-                      className="px-3 py-1 rounded-full bg-white/[0.03] text-[11px] font-mono-tech text-[#8e95a5]"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#08090d]/80 hover:bg-[#d4ff00]/15 border border-white/10 hover:border-[#d4ff00]/60 text-xs font-mono-tech text-white hover:text-[#d4ff00] transition-all duration-200 shadow-sm group/pill"
                     >
-                      {tech}
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] shadow-[0_0_6px_#d4ff00] group-hover/pill:scale-125 transition-transform" />
+                      <span className="font-semibold">{tech}</span>
                     </span>
                   ))}
                 </div>
-
-                {exp.proofUrl && (
-                  <a
-                    href={exp.proofUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    data-cursor="PROOF"
-                    onClick={() => playUiSound("hover")}
-                    className="inline-flex items-center gap-2 text-xs font-mono-tech text-[#d4ff00] hover:underline shrink-0"
-                  >
-                    <span>{exp.proofLabel || "View Proof"}</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                )}
               </div>
             </motion.div>
           ))}

@@ -159,12 +159,8 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                   <h3 className="font-display font-extrabold text-2xl text-white group-hover:text-[#d4ff00] transition-colors uppercase">
                     {project.title}
                   </h3>
-                  <p className="font-mono-tech text-xs text-[#9ca3af] mt-1 mb-3">
+                  <p className="font-mono-tech text-xs text-[#9ca3af] mt-1 mb-4">
                     {project.subtitle}
-                  </p>
-
-                  <p className="text-xs text-white/70 font-sans leading-relaxed line-clamp-3 mb-4">
-                    {project.description}
                   </p>
                 </div>
 

@@ -71,16 +71,8 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                {/* Summary */}
-                <p className="text-sm text-[#f3f4f6] leading-relaxed">
-                  {exp.summary}
-                </p>
-
                 {/* Key Achievements Bullet Points */}
-                <div className="space-y-2 pt-2">
-                  <div className="text-[11px] font-mono-tech uppercase text-[#9ca3af] tracking-wider">
-                    KEY DELIVERABLES &amp; IMPACT:
-                  </div>
+                <div className="space-y-2 pt-1">
                   <ul className="space-y-2 text-xs sm:text-sm text-[#9ca3af]">
                     {exp.achievements.map((item, itemIdx) => (
                       <li key={itemIdx} className="flex items-start gap-2.5">

@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #07080c;
+    --bg-card: #0d0f17;
+    --bg-card-hover: #141724;
+    --accent-lime: #d4ff00;
+    --accent-cyan: #00e5ff;
+    --accent-blue: #0066ff;
+    --text-primary: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-bright: rgba(212, 255, 0, 0.35);
+  }
+
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #d4ff00;
+    color: #07080c;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+    overflow-x: hidden;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #07080c;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4ff00;
+  }
+}
+
+/* Swiss Grid Lines & Decorative Accents */
+.swiss-grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.swiss-dot-bg {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0);
+}
+
+/* Crosshair decorators */
+.crosshair-corner {
+  position: relative;
+}
+.crosshair-corner::before, .crosshair-corner::after {
+  content: "+";
+  position: absolute;
+  font-family: monospace;
+  font-size: 11px;
+  color: rgba(212, 255, 0, 0.5);
+  pointer-events: none;
+}
+.crosshair-corner::before {
+  top: -7px;
+  left: -5px;
+}
+.crosshair-corner::after {
+  bottom: -7px;
+  right: -5px;
+}
+
+/* Font styles */
+.font-display {
+  font-family: var(--font-display, "Syne", sans-serif);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+}
+
+/* Kinetic scanline effect overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Magnetic glow button utility */
+.glow-lime {
+  box-shadow: 0 0 25px rgba(212, 255, 0, 0.22);
+}
+
+.glow-lime-sm {
+  box-shadow: 0 0 12px rgba(212, 255, 0, 0.15);
+}
+
+/* Marquee kinetic text animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Radar pulse animation */
+@keyframes radar-ping {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(0.95); opacity: 0; }
+}
+
+.animate-radar {
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}

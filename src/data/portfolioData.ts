@@ -160,7 +160,8 @@ export const PROJECTS: Project[] = [
       { label: "Query Latency", value: "-30%" },
       { label: "Data Integrity", value: "ACID" },
       { label: "Auth Standard", value: "JWT + HTTPS" }
-    ]
+    ],
+    image: "/thriftit-marketplace.png"
   },
   {
     id: "tesla-valuation",

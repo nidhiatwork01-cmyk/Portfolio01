@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
       { label: "Query Search", value: "<50ms" },
       { label: "Cache Hit Rate", value: "92%" }
     ],
-    image: "/nidhi-coding.jpeg"
+    image: "/meridian-scout.png"
   },
   {
     id: "thriftapp",

@@ -87,7 +87,7 @@ export const PROJECTS: Project[] = [
       { label: "Parallel Streams", value: "2x Models" },
       { label: "Recognition", value: "Founder Award" }
     ],
-    image: "/tech-stack.png"
+    image: "/pixii-scout.png"
   },
   {
     id: "aura-skincare",

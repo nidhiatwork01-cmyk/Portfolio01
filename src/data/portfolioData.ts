@@ -178,7 +178,8 @@ export const PROJECTS: Project[] = [
       { label: "Horizon", value: "5 Years" },
       { label: "Scenario Matrix", value: "3x3 Stress" },
       { label: "Model Complexity", value: "Multi-stage DCF" }
-    ]
+    ],
+    image: "/tesla-valuation.png"
   }
 ];
 

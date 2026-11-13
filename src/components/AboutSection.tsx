@@ -2,143 +2,112 @@
 
 import React from "react";
 import Image from "next/image";
-import { Cpu, Binary, Code2, Award, GraduationCap, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, GraduationCap } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import { playUiSound } from "@/lib/sound";
 
 export default function AboutSection() {
   const pillars = [
     {
-      icon: Cpu,
-      title: "Sub-Millisecond Renders",
-      desc: "Zero layout shift (0.00 CLS), sub-millisecond component renders, and clean memory lifecycles.",
+      title: "Mechanical Runtime Efficiency",
+      desc: "Sub-millisecond render lifecycles, zero layout shift (0.00 CLS), and strict memory profiling.",
     },
     {
-      icon: Binary,
-      title: "Systems-Level Rigor",
-      desc: "C++17 POSIX /proc telemetry, PostgreSQL recursive CTEs, and deep low-level fluency.",
+      title: "Systems-Level Architecture",
+      desc: "Fluency from C++17 POSIX /proc process telemetry to PostgreSQL recursive CTE pipelines.",
     },
     {
-      icon: Code2,
-      title: "Design System Ergonomics",
-      desc: "Figma design tokens translated into strict TypeScript contracts with fluid spring physics.",
-    },
-    {
-      icon: Award,
-      title: "Six Sigma DMAIC Standard",
-      desc: "Certified defect mitigation, cutting runtime defect leakage by 35% in enterprise apps.",
+      title: "Tactile Design Systems",
+      desc: "Figma token architectures translated into strict TypeScript contracts and spring-physics interactions.",
     },
   ];
 
   return (
-    <section id="about" className="py-28 md:py-36 border-b border-white/10 relative overflow-hidden bg-[#07080c]">
+    <section id="about" className="py-32 md:py-44 border-b border-white/5 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 pb-6 border-b border-white/10">
-          <div>
-            <div className="font-mono-tech text-xs uppercase tracking-widest text-[#d4ff00] mb-2">
-              01 // CORE PROFILE
-            </div>
-            <h2 className="font-display font-extrabold text-4xl sm:text-6xl text-white uppercase tracking-tight">
-              ENGINEERING IDENTITY
+        <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-20 pb-6 border-b border-white/10">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-mono-tech text-[#d4ff00]">01</span>
+            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white uppercase tracking-tight">
+              PHILOSOPHY &amp; PROFILE
             </h2>
           </div>
-          <p className="font-mono-tech text-xs text-[#9ca3af] mt-4 sm:mt-0 text-right hidden sm:block">
-            FRONTEND ARCHITECTURE × SYSTEMS DEPTH
-          </p>
+          <span className="font-mono-tech text-xs text-[#8e95a5] mt-2 sm:mt-0 uppercase tracking-widest">
+            KIIT (9.01 CGPA) • 10+ PRODUCTION APPS
+          </span>
         </div>
 
         {/* 2-Column Asymmetric Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Visual Portrait & Academic Badge */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          {/* Left Column: Portrait */}
           <div className="lg:col-span-5 relative group">
-            <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-[#0d0f17] shadow-2xl">
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
-                <Image
-                  src="/speaking-1.jpg"
-                  alt="Nidhi Singh speaking on stage"
-                  fill
-                  className="object-cover object-top grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-transparent opacity-80" />
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#0d0f17] shadow-2xl aspect-[4/5] w-full">
+              <Image
+                src="/speaking-1.jpg"
+                alt="Nidhi Singh speaking on stage"
+                fill
+                className="object-cover object-top grayscale contrast-110 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08090d] via-transparent to-transparent opacity-70" />
 
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#07080c]/80 backdrop-blur-md border border-white/10">
-                  <div className="flex items-center justify-between text-xs font-mono-tech">
-                    <span className="text-[#d4ff00] font-semibold">LEAD HOST &amp; PRESENTER</span>
-                    <span className="text-white/60">1,000+ AUDIENCE</span>
-                  </div>
-                  <p className="text-xs text-[#9ca3af] mt-1 font-sans">
-                    Flagship stage host for KIIT University tech conclaves.
-                  </p>
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs font-mono-tech text-white">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00]" />
+                  <span>LEAD STAGE HOST • 1,000+ AUDIENCE</span>
                 </div>
               </div>
             </div>
 
-            {/* Academic Credential Pill */}
-            <div className="mt-4 p-4 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <GraduationCap className="w-5 h-5 text-[#d4ff00]" />
-                <div>
-                  <div className="text-xs font-bold text-white font-mono-tech">
-                    KIIT UNIVERSITY (2023 - 2027)
-                  </div>
-                  <div className="text-[11px] text-[#9ca3af]">
-                    B.Tech Electronics &amp; Computer Science
-                  </div>
-                </div>
-              </div>
-              <div className="text-right">
-                <span className="text-sm font-bold text-[#d4ff00] font-mono-tech">9.01 CGPA</span>
-                <div className="text-[10px] text-white/40 uppercase">Top Tier</div>
-              </div>
+            <div className="mt-4 flex items-center justify-between px-2 text-xs font-mono-tech text-[#8e95a5]">
+              <span className="flex items-center gap-2">
+                <GraduationCap className="w-4 h-4 text-[#d4ff00]" />
+                <span>KIIT University // ECS</span>
+              </span>
+              <span className="text-white font-bold">9.01 CGPA</span>
             </div>
           </div>
 
-          {/* Right Column: Concise Philosophy & 4 Pillars */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="space-y-4">
-              <p className="text-xl sm:text-2xl text-white font-medium leading-relaxed">
-                I treat the front-end not as decorative styling, but as a{" "}
+          {/* Right Column: Statement & 3 Pillars */}
+          <div className="lg:col-span-7 space-y-12">
+            <div className="space-y-6">
+              <h3 className="font-display text-2xl sm:text-3xl text-white font-semibold leading-relaxed">
+                Most UI engineers treat frontend as purely cosmetic. I approach it as a{" "}
                 <span className="text-[#d4ff00]">high-concurrency mechanical system</span>.
-              </p>
-              <p className="text-sm sm:text-base text-[#9ca3af] leading-relaxed">
-                Having engineered low-latency Linux process telemetry engines in C++17 and audited multi-million row financial ledgers at HighRadius, I obsess over zero layout shift, predictable state machines, and sub-millisecond render trees.
+              </h3>
+              <p className="text-base sm:text-lg text-[#8e95a5] leading-relaxed font-normal">
+                From engineering low-latency Linux process telemetry engines in C++17 to auditing multi-million row ERP ledgers with recursive SQL CTEs at HighRadius and building Skadoosh CRM at WhatBytes, I combine systems rigor with fluid, memorable user ergonomics.
               </p>
             </div>
 
-            {/* 4 Pillars Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {pillars.map((pillar, idx) => {
-                const IconComponent = pillar.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-5 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] border border-white/10 hover:border-[#d4ff00]/40 transition-all group"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#d4ff00] mb-3">
-                      <IconComponent className="w-4 h-4" />
-                    </div>
-                    <h3 className="text-xs font-bold text-white uppercase font-mono-tech tracking-wide mb-1 group-hover:text-[#d4ff00] transition-colors">
+            {/* 3 Pillars List (Clean, airy, horizontal rows) */}
+            <div className="space-y-6 pt-4 border-t border-white/10">
+              {pillars.map((pillar, idx) => (
+                <div key={idx} className="flex items-start gap-5 group">
+                  <span className="font-mono-tech text-xs text-[#d4ff00] pt-1">
+                    0{idx + 1}
+                  </span>
+                  <div>
+                    <h4 className="font-mono-tech text-sm font-bold text-white uppercase tracking-wider mb-1 group-hover:text-[#d4ff00] transition-colors">
                       {pillar.title}
-                    </h3>
-                    <p className="text-xs text-[#9ca3af] leading-relaxed font-sans">
+                    </h4>
+                    <p className="text-sm text-[#8e95a5] leading-relaxed">
                       {pillar.desc}
                     </p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
 
             {/* Verified Links */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono-tech text-[#9ca3af]">
-              <span>VERIFIED:</span>
+            <div className="pt-2 flex items-center gap-6 text-xs font-mono-tech text-[#8e95a5]">
               <a
                 href={PERSONAL_INFO.socials.leetcode}
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="LEETCODE"
                 onClick={() => playUiSound("hover")}
-                className="flex items-center gap-1.5 text-white hover:text-[#d4ff00] underline underline-offset-4 transition-colors"
+                className="inline-flex items-center gap-1.5 text-white hover:text-[#d4ff00] transition-colors"
               >
                 <span>200+ LeetCode DSA</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
@@ -150,7 +119,7 @@ export default function AboutSection() {
                 rel="noreferrer"
                 data-cursor="GITHUB"
                 onClick={() => playUiSound("hover")}
-                className="flex items-center gap-1.5 text-white hover:text-[#d4ff00] underline underline-offset-4 transition-colors"
+                className="inline-flex items-center gap-1.5 text-white hover:text-[#d4ff00] transition-colors"
               >
                 <span>GitHub Repositories</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />

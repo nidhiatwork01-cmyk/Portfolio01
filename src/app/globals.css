@@ -2,16 +2,16 @@
 
 @layer base {
   :root {
-    --bg-dark: #07080c;
-    --bg-card: #0d0f17;
-    --bg-card-hover: #141724;
+    --bg-dark: #08090d;
+    --bg-card: rgba(255, 255, 255, 0.025);
+    --bg-card-hover: rgba(255, 255, 255, 0.045);
     --accent-lime: #d4ff00;
     --accent-cyan: #00e5ff;
     --accent-blue: #0066ff;
-    --text-primary: #f3f4f6;
-    --text-muted: #9ca3af;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-bright: rgba(212, 255, 0, 0.35);
+    --text-primary: #f8f9fa;
+    --text-muted: #8e95a5;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-bright: rgba(212, 255, 0, 0.3);
   }
 
   * {
@@ -21,7 +21,7 @@
 
   ::selection {
     background-color: #d4ff00;
-    color: #07080c;
+    color: #08090d;
   }
 
   body {
@@ -34,55 +34,52 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom subtle scrollbar */
+  /* Ultra-clean modern scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
   }
   ::-webkit-scrollbar-track {
-    background: #07080c;
+    background: #08090d;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #d4ff00;
   }
 }
 
-/* Swiss Grid Lines & Decorative Accents */
+/* Subtle, expansive Swiss Grid */
 .swiss-grid-bg {
-  background-size: 40px 40px;
+  background-size: 72px 72px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
 }
 
 .swiss-dot-bg {
-  background-size: 24px 24px;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-size: 40px 40px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0);
 }
 
-/* Crosshair decorators */
-.crosshair-corner {
-  position: relative;
+/* Luxury ambient light */
+.ambient-glow-top {
+  background: radial-gradient(circle at 50% -10%, rgba(212, 255, 0, 0.05), transparent 60%);
 }
-.crosshair-corner::before, .crosshair-corner::after {
-  content: "+";
-  position: absolute;
-  font-family: monospace;
-  font-size: 11px;
-  color: rgba(212, 255, 0, 0.5);
-  pointer-events: none;
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.crosshair-corner::before {
-  top: -7px;
-  left: -5px;
-}
-.crosshair-corner::after {
-  bottom: -7px;
-  right: -5px;
+
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(212, 255, 0, 0.35);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 30px -10px rgba(212, 255, 0, 0.08);
 }
 
 /* Font styles */
@@ -94,28 +91,13 @@
   font-family: var(--font-mono, "JetBrains Mono", monospace);
 }
 
-/* Kinetic scanline effect overlay */
-.scanlines {
-  background: linear-gradient(
-    rgba(18, 16, 16, 0) 50%, 
-    rgba(0, 0, 0, 0.25) 50%
-  ), linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 0.03),
-    rgba(0, 255, 0, 0.01),
-    rgba(0, 0, 255, 0.03)
-  );
-  background-size: 100% 3px, 6px 100%;
-  pointer-events: none;
-}
-
-/* Magnetic glow button utility */
+/* Glow utilities */
 .glow-lime {
-  box-shadow: 0 0 25px rgba(212, 255, 0, 0.22);
+  box-shadow: 0 0 30px rgba(212, 255, 0, 0.18);
 }
 
 .glow-lime-sm {
-  box-shadow: 0 0 12px rgba(212, 255, 0, 0.15);
+  box-shadow: 0 0 15px rgba(212, 255, 0, 0.12);
 }
 
 /* Marquee kinetic text animation */
@@ -127,7 +109,7 @@
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 35s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 .animate-marquee:hover {

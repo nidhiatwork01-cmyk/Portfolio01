@@ -61,7 +61,7 @@ export default function BackgroundCanvas() {
 
     const initNodes = () => {
       nodes = [];
-      const density = Math.max(35, Math.floor((width * height) / 32000));
+      const density = Math.max(20, Math.floor((width * height) / 60000));
       for (let i = 0; i < density; i++) {
         const x = Math.random() * width;
         const y = Math.random() * height;
@@ -71,11 +71,11 @@ export default function BackgroundCanvas() {
           baseY: y,
           x,
           y,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          size: isAccent ? 2 : 1.2,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
+          size: isAccent ? 1.8 : 1,
           color: isAccent ? "#d4ff00" : "#ffffff",
-          alpha: isAccent ? 0.35 : 0.15,
+          alpha: isAccent ? 0.25 : 0.08,
         });
       }
     };

@@ -143,14 +143,20 @@ export default function AboutSection() {
               </p>
             </motion.div>
 
-            {/* Bento Stats Row (Mint, Lilac, Amber, Charcoal - Reference 2 Palette) */}
+            {/* Bento Stats Row with Continuous Smooth Moving Physics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.15 }}
-                className="bg-[#dcfce7] border border-emerald-200/80 rounded-2xl p-4 text-[#064e3b] shadow-sm hover:scale-105 transition-transform"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.15,
+                  y: { repeat: Infinity, duration: 3.2, ease: "easeInOut" }
+                }}
+                whileHover={{ scale: 1.08, y: -8 }}
+                className="bg-[#dcfce7] border border-emerald-200/80 rounded-2xl p-4 text-[#064e3b] shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
                 <div className="font-display font-extrabold text-2xl sm:text-3xl">10+</div>
                 <div className="font-mono-tech text-[10px] uppercase tracking-wider mt-1 font-semibold text-emerald-800">
@@ -162,8 +168,14 @@ export default function AboutSection() {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="bg-[#ede9fe] border border-purple-200/80 rounded-2xl p-4 text-[#4c1d95] shadow-sm hover:scale-105 transition-transform"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.2,
+                  y: { repeat: Infinity, duration: 3.8, ease: "easeInOut" }
+                }}
+                whileHover={{ scale: 1.08, y: -8 }}
+                className="bg-[#ede9fe] border border-purple-200/80 rounded-2xl p-4 text-[#4c1d95] shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
                 <div className="font-display font-extrabold text-2xl sm:text-3xl">9.01</div>
                 <div className="font-mono-tech text-[10px] uppercase tracking-wider mt-1 font-semibold text-purple-800">
@@ -175,8 +187,14 @@ export default function AboutSection() {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.25 }}
-                className="bg-[#fef3c7] border border-amber-200/80 rounded-2xl p-4 text-[#78350f] shadow-sm hover:scale-105 transition-transform"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.25,
+                  y: { repeat: Infinity, duration: 4.4, ease: "easeInOut" }
+                }}
+                whileHover={{ scale: 1.08, y: -8 }}
+                className="bg-[#fef3c7] border border-amber-200/80 rounded-2xl p-4 text-[#78350f] shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
                 <div className="font-display font-extrabold text-2xl sm:text-3xl">200+</div>
                 <div className="font-mono-tech text-[10px] uppercase tracking-wider mt-1 font-semibold text-amber-800">
@@ -188,8 +206,14 @@ export default function AboutSection() {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="bg-[#18181b] border border-zinc-700 rounded-2xl p-4 text-white shadow-sm hover:scale-105 transition-transform"
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.3,
+                  y: { repeat: Infinity, duration: 5.0, ease: "easeInOut" }
+                }}
+                whileHover={{ scale: 1.08, y: -8 }}
+                className="bg-[#18181b] border border-zinc-700 rounded-2xl p-4 text-white shadow-sm hover:shadow-md transition-all cursor-pointer"
               >
                 <div className="font-display font-extrabold text-2xl sm:text-3xl text-[#d4ff00]">1K+</div>
                 <div className="font-mono-tech text-[10px] uppercase tracking-wider mt-1 font-semibold text-zinc-300">

@@ -64,6 +64,17 @@ export default function SkillsSection() {
     "Prompt Engineering & Tokens": "Optimized structured JSON output extraction, system prompts, and token budget efficiency."
   };
 
+  const movingCards = [
+    { title: "React 19 & Next.js 15", subtitle: "Concurrent Architecture" },
+    { title: "TypeScript 5+", subtitle: "Strict Schema Contracts" },
+    { title: "Framer Motion", subtitle: "Spring Physics & Parallax" },
+    { title: "Tailwind CSS", subtitle: "Zero Layout Shift (0.00 CLS)" },
+    { title: "C++17 POSIX", subtitle: "Kernel /proc Telemetry" },
+    { title: "PostgreSQL", subtitle: "B-Tree ACID Indexing" },
+    { title: "Gemini & Llama 3", subtitle: "Streaming LLM Pipelines" },
+    { title: "Six Sigma DMAIC", subtitle: "Defect Root-Cause Mitigated" },
+  ];
+
   return (
     <section id="skills" className="py-28 md:py-36 bg-[#f8fafc] text-[#0f172a] border-y border-slate-200 relative overflow-hidden">
       {/* Soft Pearlescent Mintly Ambient Halo (Reference 3) */}
@@ -87,7 +98,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Flagship Arsenal Strip (Light Frosted Pearlescent Capsules) */}
-        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-white/80 backdrop-blur-md border border-slate-200/90 shadow-sm">
+        <div className="mb-10 p-6 sm:p-8 rounded-3xl bg-white/80 backdrop-blur-md border border-slate-200/90 shadow-sm">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-100">
             <div className="flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-[#6366f1]" />
@@ -118,6 +129,43 @@ export default function SkillsSection() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Moving Cards Track (Smooth Infinite Horizontal Motion) */}
+        <div className="mb-12 overflow-hidden relative select-none py-2 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f8fafc] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f8fafc] to-transparent z-10 pointer-events-none" />
+
+          <motion.div
+            animate={{ x: [0, -1200] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 24,
+                ease: "linear",
+              },
+            }}
+            className="flex gap-4 w-max"
+          >
+            {[...movingCards, ...movingCards, ...movingCards].map((card, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -6, scale: 1.03 }}
+                className="p-3.5 px-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex items-center gap-3.5 shrink-0 cursor-pointer group/move"
+              >
+                <div className="w-2 h-2 rounded-full bg-[#6366f1] group-hover/move:scale-125 transition-transform" />
+                <div>
+                  <div className="font-sans font-bold text-xs sm:text-sm text-slate-900 group-hover/move:text-[#6366f1] transition-colors">
+                    {card.title}
+                  </div>
+                  <div className="text-[10px] font-mono-tech text-slate-500">
+                    {card.subtitle}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
 
         {/* 5 Minimalist Discipline Tabs (Mintly Style Pill Navigation) */}

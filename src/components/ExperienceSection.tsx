@@ -53,7 +53,11 @@ export default function ExperienceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: idx * 0.1 }}
-                whileHover={{ y: -4 }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.01,
+                  transition: { type: "spring", stiffness: 350, damping: 22 }
+                }}
                 className="bg-white rounded-3xl p-7 sm:p-10 border border-[#ded5c6] shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 relative group overflow-hidden"
               >
                 {/* Top ATTN Header Bar */}
@@ -77,16 +81,21 @@ export default function ExperienceSection() {
                     </div>
                   </div>
 
-                  {/* ATTN Score Stat Box (Reference 4 Style) */}
+                  {/* ATTN Score Stat Box (Reference 4 Style) with Smooth Motion */}
                   <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3">
-                    <div className="px-4 py-2.5 rounded-2xl bg-[#f4efe6] border border-[#ded5c6] text-right">
+                    <motion.div
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ repeat: Infinity, duration: 3.5 + idx * 0.5, ease: "easeInOut" }}
+                      whileHover={{ scale: 1.05 }}
+                      className="px-4 py-2.5 rounded-2xl bg-[#f4efe6] border border-[#ded5c6] text-right shadow-xs hover:shadow-md transition-all cursor-pointer"
+                    >
                       <div className="font-display font-black text-2xl sm:text-3xl text-[#ea580c] leading-none">
                         {highlight.stat}
                       </div>
                       <div className="font-mono-tech text-[10px] text-slate-600 uppercase tracking-wider mt-1 font-semibold">
                         {highlight.label}
                       </div>
-                    </div>
+                    </motion.div>
 
                     <div className="flex items-center gap-3 text-xs font-mono-tech text-slate-500">
                       <span className="flex items-center gap-1.5">

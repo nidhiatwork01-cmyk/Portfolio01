@@ -108,7 +108,11 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: projectIdx * 0.08 }}
-                whileHover={{ y: -8 }}
+                whileHover={{
+                  y: -10,
+                  scale: 1.015,
+                  transition: { type: "spring", stiffness: 350, damping: 22 }
+                }}
                 onClick={() => {
                   playUiSound("click");
                   onSelectProject(project);
@@ -182,13 +186,14 @@ export default function ProjectsSection({ onSelectProject }: ProjectsSectionProp
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech, idx) => (
-                        <span
+                        <motion.span
                           key={idx}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#08090d]/80 hover:bg-[#d4ff00]/15 border border-white/10 hover:border-[#d4ff00]/60 text-xs font-mono-tech text-white hover:text-[#d4ff00] transition-all duration-200 shadow-sm group/pill"
+                          whileHover={{ scale: 1.08, y: -2 }}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#08090d]/80 hover:bg-[#d4ff00]/15 border border-white/10 hover:border-[#d4ff00]/60 text-xs font-mono-tech text-white hover:text-[#d4ff00] transition-all duration-200 shadow-sm group/pill cursor-pointer"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-[#d4ff00] shadow-[0_0_6px_#d4ff00] group-hover/pill:scale-125 transition-transform" />
                           <span className="font-semibold tracking-tight">{tech}</span>
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
                   </div>
